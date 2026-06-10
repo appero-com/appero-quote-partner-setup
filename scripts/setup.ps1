@@ -32,15 +32,8 @@ if ($packageId -match 'PLACEHOLDER|^04tX+$') {
 }
 
 $permsetConfig = Get-Content $PermsetConfigPath -Raw | ConvertFrom-Json
-$userDisplay = sf org display user --target-org $TargetOrg
-if ($LASTEXITCODE -ne 0) {
-    Write-Error "Could not read user for org alias: $TargetOrg"
-    exit 1
-}
 
-$username = ($userDisplay | Select-String 'Username').Line.Split(':', 2)[1].Trim()
-
-Write-Host "Setting up Appero Quote demo for $username ($TargetOrg) ..."
+Write-Host "Setting up Appero Quote demo for org $TargetOrg ..."
 
 Write-Host "Installing Appero Quote package $packageId ..."
 sf package install --package $packageId --target-org $TargetOrg --wait 30 --no-prompt --security-type AllUsers
@@ -48,7 +41,7 @@ if ($LASTEXITCODE -ne 0) { exit 1 }
 
 foreach ($permset in $permsetConfig.permissionSets) {
     Write-Host "Assigning permission set $permset ..."
-    sf org assign permset --name $permset --target-org $TargetOrg --on-behalf-of $username
+    sf org assign permset --name $permset --target-org $TargetOrg
     if ($LASTEXITCODE -ne 0) { exit 1 }
 }
 

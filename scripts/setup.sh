@@ -51,13 +51,7 @@ if [[ -z "$PACKAGE_ID" ]] || [[ "$PACKAGE_ID" == *PLACEHOLDER* ]] || [[ "$PACKAG
   exit 1
 fi
 
-USERNAME="$(sf org display user --target-org "$TARGET_ORG" | sed -n 's/^Username:[[:space:]]*//p' | head -1)"
-if [[ -z "$USERNAME" ]]; then
-  echo "Could not read user for org alias: $TARGET_ORG"
-  exit 1
-fi
-
-echo "Setting up Appero Quote demo for ${USERNAME} (${TARGET_ORG}) ..."
+echo "Setting up Appero Quote demo for org ${TARGET_ORG} ..."
 
 echo "Installing Appero Quote package ${PACKAGE_ID} ..."
 sf package install \
@@ -73,8 +67,7 @@ while IFS= read -r permset; do
   echo "Assigning permission set ${permset} ..."
   sf org assign permset \
     --name "$permset" \
-    --target-org "$TARGET_ORG" \
-    --on-behalf-of "$USERNAME"
+    --target-org "$TARGET_ORG"
 done < <(grep -o '"sf42_quotefx__[^"]*"' "${REPO_ROOT}/config/permsets.json" | tr -d '"')
 
 if [[ "$PERMSET_COUNT" -eq 0 ]]; then
