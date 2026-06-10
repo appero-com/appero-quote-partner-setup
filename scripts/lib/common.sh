@@ -288,11 +288,24 @@ PY
     --target-org "$TARGET_ORG"
 }
 
-invoke_post_setup_apex() {
-  echo "Running post-setup Apex ..."
+run_apex_script() {
+  local relative_path="$1"
+  local label="$2"
+
+  echo "Running ${label} ..."
   sf apex run \
-    --file "${REPO_ROOT}/scripts/apex/post-setup.apex" \
+    --file "${REPO_ROOT}/${relative_path}" \
     --target-org "$TARGET_ORG"
+
+  if [[ $? -ne 0 ]]; then
+    echo "${label} failed."
+    exit 1
+  fi
+}
+
+invoke_post_setup_apex() {
+  run_apex_script "scripts/apex/post-setup-custom-objects.apex" "post-setup custom objects Apex"
+  run_apex_script "scripts/apex/post-setup-entities.apex" "post-setup setup entities Apex"
 }
 
 show_success_summary() {

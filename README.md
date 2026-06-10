@@ -13,7 +13,7 @@ Partners authenticate their own org manually, then run a single setup script. No
    - Opportunity
    - Product2
 4. Imports demo data via `sf data import tree`
-5. Runs post-setup Apex to resolve placeholder IDs and create initial settings
+5. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
 
 ## Prerequisites
 
@@ -90,7 +90,8 @@ appero-quote-partner-setup/
     setup.ps1               # Windows entry point
     setup.sh                # macOS/Linux entry point
     lib/                    # Shared setup logic
-    apex/post-setup.apex    # Placeholder resolution + settings
+    apex/post-setup-custom-objects.apex  # Placeholder resolution on package objects
+    apex/post-setup-entities.apex      # Public group setup (separate transaction)
   sfdx-project.json         # Minimal project file for metadata deploy only
 ```
 
@@ -148,7 +149,7 @@ The `data/` folder contains:
 
 When you refresh demo data from a golden org, update the JSON files and verify `import-plan.json` still lists the correct files in dependency order.
 
-If a field stores Salesforce Ids that cannot be resolved during import, keep placeholder tokens in the JSON and resolve them in `scripts/apex/post-setup.apex`.
+If a field stores Salesforce Ids that cannot be resolved during import, keep placeholder tokens in the JSON and resolve them in `scripts/apex/post-setup-custom-objects.apex`.
 
 ## Setup flow
 
@@ -173,18 +174,36 @@ Deploy CustomApplication metadata
 Import demo data (tree import)
         |
         v
-Run post-setup Apex
+Run post-setup custom objects Apex
+        |
+        v
+Run post-setup setup entities Apex
 ```
+
+## Post-setup Apex scripts
+
+Post-setup runs as **two separate anonymous Apex scripts** to avoid mixed DML errors between package custom objects and setup entities (`Group`, `GroupMember`).
+
+### `scripts/apex/post-setup-custom-objects.apex`
+
+Runs after data import. Currently:
+
+1. Creates letterhead `Document` records from package static resources
+2. Resolves quote style page placeholders (`Placeholder1stPage`, `Placeholder2ndPage`)
+3. Resolves product group placeholders on `sf42_quotefx__SF42_GenLineItem__c` line items
+
+### `scripts/apex/post-setup-entities.apex`
+
+Runs in a second transaction immediately after the custom-objects script:
+
+1. Creates the `QuoteAdmin` public group
+2. Adds the **authenticated running user** to that group
+
+No deployed Apex class is required for partner setup.
 
 ## Customizing post-setup Apex
 
-Edit `scripts/apex/post-setup.apex` to:
-
-1. Replace placeholder tokens in imported records with real Salesforce Ids
-2. Create or update initial package settings records
-3. Perform any demo-specific cleanup
-
-The included file is a scaffold with verification logic and commented examples.
+Edit the two scripts above to adjust placeholder mappings, demo settings, or group setup behavior.
 
 ## Capturing FlexiPage API names from a golden org
 

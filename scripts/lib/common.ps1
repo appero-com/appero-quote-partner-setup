@@ -308,17 +308,26 @@ function Import-DemoData {
     }
 }
 
-function Invoke-PostSetupApex {
-    $apexFile = Join-Path $Script:RepoRoot 'scripts/apex/post-setup.apex'
+function Invoke-ApexScript {
+    param(
+        [string]$RelativePath,
+        [string]$Label
+    )
 
-    Write-Host 'Running post-setup Apex ...'
+    $apexFile = Join-Path $Script:RepoRoot $RelativePath
+    Write-Host "Running $Label ..."
     & sf apex run `
         --file $apexFile `
         --target-org $Script:TargetOrg
 
     if ($LASTEXITCODE -ne 0) {
-        throw 'Post-setup Apex failed.'
+        throw "$Label failed."
     }
+}
+
+function Invoke-PostSetupApex {
+    Invoke-ApexScript -RelativePath 'scripts/apex/post-setup-custom-objects.apex' -Label 'post-setup custom objects Apex'
+    Invoke-ApexScript -RelativePath 'scripts/apex/post-setup-entities.apex' -Label 'post-setup setup entities Apex'
 }
 
 function Show-SuccessSummary {
