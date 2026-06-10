@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_Account_Group__c",
+        "referenceId": "AccountGroupRef1"
+      },
+      "Name": "High Priority"
+    }
+  ]
+}

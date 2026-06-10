@@ -262,14 +262,27 @@ PY
 
 import_demo_data() {
   local object_count
-  object_count="$(python3 -c "import json; print(len(json.load(open('${REPO_ROOT}/data/import-plan.json')).get('objects', [])))")"
+  object_count="$(python3 - "$REPO_ROOT" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+plan = json.loads((Path(sys.argv[1]) / "data" / "import-plan.json").read_text(encoding="utf-8"))
+if isinstance(plan, list):
+    print(len(plan))
+elif isinstance(plan, dict):
+    print(len(plan.get("objects", [])))
+else:
+    print(0)
+PY
+)"
 
   if [[ "$object_count" -eq 0 ]]; then
-    echo "Warning: data/import-plan.json still contains a placeholder. Skipping data import."
+    echo "Warning: data/import-plan.json has no import entries. Skipping data import."
     return 0
   fi
 
-  echo "Importing demo data ..."
+  echo "Importing demo data (${object_count} objects) ..."
   sf data import tree \
     --plan "${REPO_ROOT}/data/import-plan.json" \
     --target-org "$TARGET_ORG"

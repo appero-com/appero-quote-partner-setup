@@ -1,0 +1,100 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "AddonProductRef1"
+      },
+      "Name": "Addon 1 Lizenz",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": false,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef3",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef1",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "AddOn"
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "AddonProductRef2"
+      },
+      "Name": "Addon 3 Lizenz",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": false,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef3",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef2",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "AddOn"
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "AddonProductRef3"
+      },
+      "Name": "Addon 2 Lizenz",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": false,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef3",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef24",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "AddOn"
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "BundleProductRef1"
+      },
+      "Name": "Bundle Child Implementation",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": true,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_Position__c": 1,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef22",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef1",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "Component",
+      "sf42_quotefx__sf42_Unitprice__c": 8984
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "BundleProductRef2"
+      },
+      "Name": "Bundle Child Training",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": false,
+      "sf42_quotefx__sf42_Discount__c": 10,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_Position__c": 3,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef22",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef24",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "Component"
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__sf42_ProductEntry__c",
+        "referenceId": "BundleProductRef3"
+      },
+      "Name": "Bundle Child Approval",
+      "sf42_quotefx__sf42_DiscountNotEditable__c": false,
+      "sf42_quotefx__sf42_Discount__c": 10,
+      "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
+      "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
+      "sf42_quotefx__sf42_Position__c": 2,
+      "sf42_quotefx__sf42_ProductID1__c": "ProductRef22",
+      "sf42_quotefx__sf42_ProductID2__c": "ProductRef23",
+      "sf42_quotefx__sf42_Quantity__c": 1,
+      "sf42_quotefx__sf42_Required__c": true,
+      "sf42_quotefx__sf42_Type__c": "Component"
+    }
+  ]
+}

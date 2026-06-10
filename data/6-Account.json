@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Account",
+        "referenceId": "AccountRef7"
+      },
+      "Name": "John Doe Inc.",
+      "sf42_quotefx__SF42_Account_Group__c": "AccountGroupRef1",
+      "Type": "Customer - Direct",
+      "BillingStreet": "1301 Avenue of the Americas \r\nNew York, NY 10019\r\nUSA",
+      "BillingCity": "New York",
+      "BillingState": "NY",
+      "ShippingStreet": "1301 Avenue of the Americas \r\nNew York, NY 10019\r\nUSA",
+      "Phone": "(212) 842-5500",
+      "Fax": "(212) 842-5501",
+      "AccountNumber": "CD355118",
+      "Website": "http://www.uos.com",
+      "Sic": "4437",
+      "Industry": "Energy",
+      "AnnualRevenue": 5600000000,
+      "NumberOfEmployees": 145000,
+      "Ownership": "Public",
+      "TickerSymbol": "UOS",
+      "Description": "World's third largest oil and gas company.",
+      "Rating": "Hot",
+      "CleanStatus": "Pending"
+    }
+  ]
+}

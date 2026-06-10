@@ -1,0 +1,132 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef1"
+      },
+      "Name": "appero quote Implementation 'Premium'",
+      "Description": "Setup and customer-specific configuration performed by a Salesforce certified employee:\n\n- Installation and permissions\n- Basic configuration and individual settings\n- Letter paper, formatting (CSS)\n- Creation of one quotation template\n- Configuration of users and licenses\n- Launch\n\nNot included is the realization of:\n- Product basics / customization\n- Price and discount calculation\n- Approval process\n- Email templates\n- Automations\n- Data clean-up and handling\n- Third party integrations",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef3",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 1,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef2"
+      },
+      "Name": "appero quote Support 'Business'",
+      "Description": "Premium support - equals 20% of the annual license costs.\n\nIn addition to product support \"Basic\", the following services are provided :\n\n- Response time max. 24 hours\n- Personal contact\n- Testing/acceptance of product updates\n- Administration support and best practice",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef1",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 1,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef3"
+      },
+      "Name": "appero quote License",
+      "Description": "Salesforce quotation and opportunity management.\n\nDetails on benefits and functionality are available at\nhttps://appexchange.salesforce.com/appxListingDetail?listingId=a0N30000001sr6oEAA\n\nProduct support \"Basic\" is included:\n- Support request to be managed within 72h\n- Communication per email\n- Access to online documentation to be granted\n- Provision of product updates",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef2",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 12,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef22"
+      },
+      "Name": "appero quote Starter Bundle",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef3",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 1,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef23"
+      },
+      "Name": "Approval Process Implementation",
+      "Description": "Setting up a standardised approval process for the appero quote object in Salesforce.",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef3",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 1,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef24"
+      },
+      "Name": "appero quote Admin Training",
+      "Description": "Individual training for administrators and users (2 person days) on site by a certified Salesforce.com employee.\n\nMax. of 20 participants.\nTraining materials and documentation are included.",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IgnoreOppSync__c": false,
+      "sf42_quotefx__SF42_IgnoreQuoteEditor__c": false,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": false,
+      "sf42_quotefx__SF42_Product_Group__c": "ProductGroupRef4",
+      "sf42_quotefx__SF42_QuantityMultiplier__c": 1,
+      "sf42_quotefx__SF42_SkipDetailDialogOnAdd__c": false,
+      "sf42_quotefx__SF42_VE__c": 1,
+      "sf42_quotefx__SF42_editableListprice__c": false,
+      "sf42_quotefx__SF42_fetchPriceFromExternal__c": false,
+      "sf42_quotefx__SF42_isOverrideProduct__c": false,
+      "sf42_quotefx__SF42_notDiscountable__c": false
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef25"
+      },
+      "Name": "Discount Product",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IsDiscountProduct__c": true
+    }
+  ]
+}

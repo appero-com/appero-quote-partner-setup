@@ -1,0 +1,76 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef1"
+      },
+      "Name": "Support",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef2"
+      },
+      "Name": "Licenses",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef3"
+      },
+      "Name": "One-time Service",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef4"
+      },
+      "Name": "Training",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef5"
+      },
+      "Name": "Installation",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef6"
+      },
+      "Name": "Technical Support",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef7"
+      },
+      "Name": "Hardware",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef8"
+      },
+      "Name": "Recurring",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    },
+    {
+      "attributes": {
+        "type": "sf42_quotefx__SF42_productGroup__c",
+        "referenceId": "ProductGroupRef9"
+      },
+      "Name": "OneTime",
+      "sf42_quotefx__SF42_availableAsProductfilter__c": true
+    }
+  ]
+}

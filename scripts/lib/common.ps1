@@ -274,16 +274,31 @@ function Deploy-FlexipageAssignments {
     }
 }
 
+function Get-ImportPlanEntryCount {
+    param($Plan)
+
+    if ($Plan -is [System.Array]) {
+        return $Plan.Count
+    }
+
+    if ($Plan.PSObject.Properties.Name -contains 'objects' -and $Plan.objects) {
+        return $Plan.objects.Count
+    }
+
+    return 0
+}
+
 function Import-DemoData {
     $planPath = Join-Path $Script:RepoRoot 'data/import-plan.json'
     $plan = Read-JsonConfig 'data/import-plan.json'
+    $entryCount = Get-ImportPlanEntryCount -Plan $plan
 
-    if (-not $plan.objects -or $plan.objects.Count -eq 0) {
-        Write-Warning 'data/import-plan.json still contains a placeholder. Skipping data import.'
+    if ($entryCount -eq 0) {
+        Write-Warning 'data/import-plan.json has no import entries. Skipping data import.'
         return
     }
 
-    Write-Host 'Importing demo data ...'
+    Write-Host "Importing demo data ($entryCount objects) ..."
     & sf data import tree `
         --plan $planPath `
         --target-org $Script:TargetOrg

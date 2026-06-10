@@ -81,8 +81,8 @@ appero-quote-partner-setup/
     permsets.json           # Namespaced permission set API names
     flexipages.json         # App + FlexiPage API names per object
   data/
-    import-plan.json        # sf data import tree plan
-    *.csv                   # Demo data export files
+    import-plan.json        # sf data import tree plan (used by setup scripts)
+    *.json                  # Demo data files in sObject tree format
   metadata/
     generated/              # Created at runtime (gitignored)
     templates/              # FlexiPage assignment XML template
@@ -139,11 +139,16 @@ The setup script:
 
 This is the supported way to automate Lightning record page activation per app and profile when the package ships FlexiPages only.
 
-### `data/import-plan.json` and CSV files
+### Demo data files
 
-Replace the placeholder import plan with your exported `sf data import tree` plan and place the referenced CSV files in `data/`.
+The `data/` folder contains:
 
-If a field stores Salesforce Ids that cannot be resolved during import, keep placeholder tokens in the CSV and resolve them in `scripts/apex/post-setup.apex`.
+- **`import-plan.json`** — import plan consumed by `sf data import tree`. Each entry lists an sObject, its JSON file(s), and `saveRefs` / `resolveRefs` flags for cross-file reference resolution.
+- **Numbered `*.json` files** — records in sObject tree format.
+
+When you refresh demo data from a golden org, update the JSON files and verify `import-plan.json` still lists the correct files in dependency order.
+
+If a field stores Salesforce Ids that cannot be resolved during import, keep placeholder tokens in the JSON and resolve them in `scripts/apex/post-setup.apex`.
 
 ## Setup flow
 
@@ -198,7 +203,7 @@ Use the retrieved app and FlexiPage API names in `config/flexipages.json`.
 - **Single run**: intended for a fresh demo setup, not repeated upgrades or resets
 - **Running user only**: permission sets and FlexiPage assignments target the authenticated user
 - **Manual release updates**: bump `packageVersionId` in config when Appero publishes a new version
-- **Placeholder import plan**: setup skips data import until `data/import-plan.json` contains objects
+- **Import plan required**: setup skips data import if `data/import-plan.json` has no entries
 
 ## Troubleshooting
 
@@ -208,7 +213,7 @@ Use the retrieved app and FlexiPage API names in `config/flexipages.json`.
 | Package install fails | Invalid `04t` Id, missing license, or org restrictions |
 | App retrieve fails | Wrong app API name in `config/flexipages.json` |
 | FlexiPage deploy fails | Wrong FlexiPage API name or profile name with special characters |
-| Data import skipped | `import-plan.json` still contains the placeholder |
+| Data import skipped | `import-plan.json` is empty or missing entries |
 | Post-setup Apex fails | Placeholder resolution logic not yet implemented |
 
 ## Support
