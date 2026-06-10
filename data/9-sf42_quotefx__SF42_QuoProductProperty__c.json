@@ -1,7 +1,4 @@
 {
-  "attributes": {
-    "type": "sf42_quotefx__SF42_QuoProductProperty__c"
-  },
   "records": [
     {
       "attributes": {
@@ -9,7 +6,7 @@
         "referenceId": "ProductPropertyRef1"
       },
       "Name": "appero quote > 50 Licenses, 12 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -34,7 +31,7 @@
         "referenceId": "ProductPropertyRef2"
       },
       "Name": "Period of notice",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 3,
       "sf42_quotefx__SF42_DropdownValues__c": "4 Wochen vor Vertragsende,6 Wochen vor Vertragsende,60 Tage vor Vertragsende",
@@ -57,7 +54,7 @@
         "referenceId": "ProductPropertyRef3"
       },
       "Name": "Period of notice",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 3,
       "sf42_quotefx__SF42_DropdownValues__c": "4 Wochen vor Vertragsende,6 Wochen vor Vertragsende,60 Tage vor Vertragsende",
@@ -80,7 +77,7 @@
         "referenceId": "ProductPropertyRef4"
       },
       "Name": "Start date",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 1,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
@@ -102,7 +99,7 @@
         "referenceId": "ProductPropertyRef5"
       },
       "Name": "appero quote > 10 Lizenzen, 12 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -127,7 +124,7 @@
         "referenceId": "ProductPropertyRef6"
       },
       "Name": "appero quote > 20 Licenses, 12 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -152,7 +149,7 @@
         "referenceId": "ProductPropertyRef7"
       },
       "Name": "Support aus Lizenzvolumen 20%",
-      "RecordTypeId": "Preiskalkulation_Summe",
+      "RecordType": { "Name": "Price Calculation from a Product Group" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product__c": "@ProductRef2",
@@ -176,7 +173,7 @@
         "referenceId": "ProductPropertyRef8"
       },
       "Name": "Start date",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 1,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
@@ -198,7 +195,7 @@
         "referenceId": "ProductPropertyRef13"
       },
       "Name": "appero quote > 20 Licenses, 36 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -223,7 +220,7 @@
         "referenceId": "ProductPropertyRef14"
       },
       "Name": "appero quote > 50 Licenses, 36 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -248,7 +245,7 @@
         "referenceId": "ProductPropertyRef15"
       },
       "Name": "appero quote > 50 Licenses, 24 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -273,7 +270,7 @@
         "referenceId": "ProductPropertyRef16"
       },
       "Name": "appero quote up to 10 Licenses, 36 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -298,7 +295,7 @@
         "referenceId": "ProductPropertyRef17"
       },
       "Name": "appero quote > 10 Lizenzen, 24 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -323,7 +320,7 @@
         "referenceId": "ProductPropertyRef18"
       },
       "Name": "appero quote > 10 Licenses, 36 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -348,7 +345,7 @@
         "referenceId": "ProductPropertyRef19"
       },
       "Name": "appero quote > 20 Licenses, 24 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -373,7 +370,7 @@
         "referenceId": "ProductPropertyRef20"
       },
       "Name": "appero quote up to 10 Licenses, 24 Months",
-      "RecordTypeId": "Staffelpreisberechnung",
+      "RecordType": { "Name": "Bulk Price" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
       "sf42_quotefx__SF42_Product_Group__c": "@ProductGroupRef2",
@@ -398,7 +395,7 @@
         "referenceId": "ProductPropertyRef21"
       },
       "Name": "End date",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 2,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
@@ -420,7 +417,7 @@
         "referenceId": "ProductPropertyRef22"
       },
       "Name": "End date",
-      "RecordTypeId": "Produktoption_ohne_Berechnung",
+      "RecordType": { "Name": "Product Property without Price Influence" },
       "sf42_quotefx__IsInactive__c": false,
       "sf42_quotefx__SF42_CalcOrder__c": 2,
       "sf42_quotefx__SF42_LoadOnDemand__c": false,
