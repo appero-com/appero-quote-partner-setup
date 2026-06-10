@@ -331,13 +331,12 @@ function Invoke-PostSetupApex {
 }
 
 function Show-SuccessSummary {
-    $flexipageConfig = Read-JsonConfig 'config/flexipages.json'
-
     Write-Host ''
     Write-Host 'Appero Quote demo setup completed successfully.'
     Write-Host 'Open these Lightning apps in your org:'
-    foreach ($app in $flexipageConfig.apps) {
-        Write-Host "  - $($app.label)"
-    }
+    Write-Host '  - Appero Quote'
+    Write-Host '  - Appero Quote Setup'
+    Write-Host ''
+    Write-Host 'Note: FlexiPage assignment is not automated in v1. Assign record pages manually if needed.'
     Write-Host ''
 }

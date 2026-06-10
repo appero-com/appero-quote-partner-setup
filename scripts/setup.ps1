@@ -15,7 +15,7 @@ try {
     Test-UserPermissions
     Install-ApperoPackage
     Assign-PermissionSets
-    Deploy-FlexipageAssignments
+    # FlexiPage assignment skipped in v1 — enable Deploy-FlexipageAssignments when config/flexipages.json is ready.
     Import-DemoData
     Invoke-PostSetupApex
     Show-SuccessSummary

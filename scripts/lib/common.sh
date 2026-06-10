@@ -309,15 +309,14 @@ invoke_post_setup_apex() {
 }
 
 show_success_summary() {
-  python3 - "${REPO_ROOT}/config/flexipages.json" <<'PY'
-import json, pathlib, sys
+  cat <<'EOF'
 
-config = json.load(open(sys.argv[1]))
-print()
-print("Appero Quote demo setup completed successfully.")
-print("Open these Lightning apps in your org:")
-for app in config["apps"]:
-    print(f"  - {app['label']}")
-print()
-PY
+Appero Quote demo setup completed successfully.
+Open these Lightning apps in your org:
+  - Appero Quote
+  - Appero Quote Setup
+
+Note: FlexiPage assignment is not automated in v1. Assign record pages manually if needed.
+
+EOF
 }

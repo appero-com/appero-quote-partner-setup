@@ -2,18 +2,16 @@
 
 Bootstrap kit for Salesforce ISV partners to prepare a demo org for **Appero Quote** using the Salesforce CLI.
 
-Partners authenticate their own org manually, then run a single setup script. No scratch orgs, no full Salesforce DX app project, and no manual FlexiPage assignment steps.
+Partners authenticate their own org manually, then run a single setup script. No scratch orgs and no full Salesforce DX app project.
 
 ## What this repository does
 
 1. Installs the pinned Appero Quote package version
 2. Assigns namespaced permission sets to the authenticated user
-3. Activates package FlexiPages for **Appero Quote** and **Appero Quote Setup** for the running user's profile on:
-   - Account
-   - Opportunity
-   - Product2
-4. Imports demo data via `sf data import tree`
-5. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
+3. Imports demo data via `sf data import tree`
+4. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
+
+FlexiPage assignment for **Appero Quote** and **Appero Quote Setup** is **not included in v1** and must be done manually in the org until `config/flexipages.json` is finalized.
 
 ## Prerequisites
 
@@ -79,7 +77,7 @@ appero-quote-partner-setup/
   config/
     package-version.json    # Appero updates the 04t... Id per release
     permsets.json           # Namespaced permission set API names
-    flexipages.json         # App + FlexiPage API names per object
+    flexipages.json         # FlexiPage config (reserved for a future release)
   data/
     import-plan.json        # sf data import tree plan (used by setup scripts)
     *.json                  # Demo data files in sObject tree format
@@ -99,7 +97,7 @@ This is **not** a full SFDX application repository. There is no `force-app/`, LW
 
 ## Configuration (maintained by Appero)
 
-Before partners run setup, Appero maintains three config files.
+Before partners run setup, Appero maintains the config files below.
 
 ### `config/package-version.json`
 
@@ -126,22 +124,9 @@ List namespaced permission set API names from the installed package:
 }
 ```
 
-### `config/flexipages.json`
+### `config/flexipages.json` (future)
 
-Defines FlexiPage assignments for both Lightning apps. There are **no record-type-specific** assignments.
-
-Replace all `PLACEHOLDER` values with API names from your golden demo org:
-
-- Managed Lightning app API names (`CustomApplication`)
-- Managed FlexiPage API names (`FlexiPage`)
-
-The setup script:
-
-1. Retrieves each app from the target org after package install
-2. Adds `profileActionOverrides` for the running user's profile
-3. Deploys the updated `CustomApplication` metadata
-
-This is the supported way to automate Lightning record page activation per app and profile when the package ships FlexiPages only.
+Reserved for automated FlexiPage assignment. **Not used in v1.** When enabled, the setup script will retrieve package Lightning apps, add `profileActionOverrides` for the running user's profile, and deploy `CustomApplication` metadata.
 
 ### Demo data files
 
@@ -167,11 +152,6 @@ Install Appero Quote package (04t...)
         |
         v
 Assign permission sets to running user
-        |
-        v
-Retrieve package Lightning apps
-Generate profileActionOverrides (Account, Opportunity, Product2)
-Deploy CustomApplication metadata
         |
         v
 Import demo data (tree import)
@@ -208,22 +188,11 @@ No deployed Apex class is required for partner setup.
 
 Edit the two scripts above to adjust placeholder mappings, demo settings, or group setup behavior.
 
-## Capturing FlexiPage API names from a golden org
-
-After configuring demo apps correctly in a reference org:
-
-```bash
-sf data query --query "SELECT DeveloperName, MasterLabel FROM FlexiPage WHERE NamespacePrefix = 'sf42_quotefx'" --target-org golden-org
-
-sf project retrieve start --metadata "CustomApplication:sf42_quotefx__Your_App_Api_Name" --target-org golden-org
-```
-
-Use the retrieved app and FlexiPage API names in `config/flexipages.json`.
-
 ## Limitations (v1)
 
 - **Single run**: intended for a fresh demo setup, not repeated upgrades or resets
-- **Running user only**: permission sets and FlexiPage assignments target the authenticated user
+- **Running user only**: permission sets target the authenticated user
+- **No FlexiPage automation**: assign record pages for Account, Opportunity, and Product2 manually in **Appero Quote** and **Appero Quote Setup**, or enable `Deploy-FlexipageAssignments` / `deploy_flexipage_assignments` once `config/flexipages.json` is complete
 - **Manual release updates**: bump `packageVersionId` in config when Appero publishes a new version
 - **Import plan required**: setup skips data import if `data/import-plan.json` has no entries
 
@@ -233,10 +202,9 @@ Use the retrieved app and FlexiPage API names in `config/flexipages.json`.
 |-------|----------------|
 | Permission check fails | User profile lacks install/customize permissions |
 | Package install fails | Invalid `04t` Id, missing license, or org restrictions |
-| App retrieve fails | Wrong app API name in `config/flexipages.json` |
-| FlexiPage deploy fails | Wrong FlexiPage API name or profile name with special characters |
 | Data import skipped | `import-plan.json` is empty or missing entries |
-| Post-setup Apex fails | Placeholder resolution logic not yet implemented |
+| Post-setup Apex fails | Missing static resources, permissions, or placeholder data |
+| Wrong record pages in apps | FlexiPage assignment not automated in v1 — configure manually in Setup |
 
 ## Support
 

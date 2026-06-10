@@ -45,7 +45,7 @@ show_org_info
 test_user_permissions
 install_appero_package
 assign_permission_sets
-deploy_flexipage_assignments
+# FlexiPage assignment skipped in v1 — enable deploy_flexipage_assignments when config/flexipages.json is ready.
 import_demo_data
 invoke_post_setup_apex
 show_success_summary
