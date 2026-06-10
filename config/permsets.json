@@ -1,7 +1,8 @@
 {
+  "namespace": "sf42_quotefx",
   "permissionSets": [
-    "appero_quote__PLACEHOLDER_PermSet_1",
-    "appero_quote__PLACEHOLDER_PermSet_2"
-  ],
-  "comment": "Replace with namespaced permission set API names from the installed package."
+    "sf42_quotefx__apoQuoteUser",
+    "sf42_quotefx__apoQuoteAdmin",
+    "sf42_quotefx__apperoQuoteLightning"
+  ]
 }

@@ -3,38 +3,38 @@
   "formFactors": ["Large", "Small"],
   "apps": [
     {
-      "apiName": "appero_quote__PLACEHOLDER_Appero_Quote_App",
+      "apiName": "sf42_quotefx__PLACEHOLDER_Appero_Quote_App",
       "label": "Appero Quote",
       "assignments": [
         {
           "object": "Account",
-          "flexipage": "appero_quote__PLACEHOLDER_Account_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Account_FlexiPage"
         },
         {
           "object": "Opportunity",
-          "flexipage": "appero_quote__PLACEHOLDER_Opportunity_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Opportunity_FlexiPage"
         },
         {
           "object": "Product2",
-          "flexipage": "appero_quote__PLACEHOLDER_Product2_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Product2_FlexiPage"
         }
       ]
     },
     {
-      "apiName": "appero_quote__PLACEHOLDER_Appero_Quote_Setup_App",
+      "apiName": "sf42_quotefx__PLACEHOLDER_Appero_Quote_Setup_App",
       "label": "Appero Quote Setup",
       "assignments": [
         {
           "object": "Account",
-          "flexipage": "appero_quote__PLACEHOLDER_Setup_Account_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Account_FlexiPage"
         },
         {
           "object": "Opportunity",
-          "flexipage": "appero_quote__PLACEHOLDER_Setup_Opportunity_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Opportunity_FlexiPage"
         },
         {
           "object": "Product2",
-          "flexipage": "appero_quote__PLACEHOLDER_Setup_Product2_FlexiPage"
+          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Product2_FlexiPage"
         }
       ]
     }

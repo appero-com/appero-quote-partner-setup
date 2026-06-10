@@ -117,8 +117,11 @@ List namespaced permission set API names from the installed package:
 
 ```json
 {
+  "namespace": "sf42_quotefx",
   "permissionSets": [
-    "appero_quote__Appero_Quote_User"
+    "sf42_quotefx__apoQuoteUser",
+    "sf42_quotefx__apoQuoteAdmin",
+    "sf42_quotefx__apperoQuoteLightning"
   ]
 }
 ```
@@ -210,9 +213,9 @@ Edit the two scripts above to adjust placeholder mappings, demo settings, or gro
 After configuring demo apps correctly in a reference org:
 
 ```bash
-sf data query --query "SELECT DeveloperName, MasterLabel FROM FlexiPage WHERE NamespacePrefix = 'appero_quote'" --target-org golden-org
+sf data query --query "SELECT DeveloperName, MasterLabel FROM FlexiPage WHERE NamespacePrefix = 'sf42_quotefx'" --target-org golden-org
 
-sf project retrieve start --metadata "CustomApplication:appero_quote__Your_App_Api_Name" --target-org golden-org
+sf project retrieve start --metadata "CustomApplication:sf42_quotefx__Your_App_Api_Name" --target-org golden-org
 ```
 
 Use the retrieved app and FlexiPage API names in `config/flexipages.json`.
