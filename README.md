@@ -47,12 +47,6 @@ The authenticated user should have a profile with at least:
 - **Install Packaged Components**
 - **Customize Application**
 
-The setup script checks these permissions and exits with a clear message if they are missing.
-
-### Bash-only extra dependency
-
-The macOS/Linux script (`scripts/setup.sh`) requires **Python 3** for JSON and metadata generation. Windows PowerShell does not require Python.
-
 ## Quick start
 
 ### Windows (PowerShell)
@@ -67,6 +61,14 @@ sf org login web --alias my-demo-org
 ```bash
 chmod +x scripts/setup.sh
 sf org login web --alias my-demo-org
+./scripts/setup.sh --target-org my-demo-org
+```
+
+### Windows (Git Bash fallback)
+
+If PowerShell is blocked by antivirus software, use Git Bash:
+
+```bash
 ./scripts/setup.sh --target-org my-demo-org
 ```
 
@@ -85,9 +87,8 @@ appero-quote-partner-setup/
     generated/              # Created at runtime (gitignored)
     templates/              # FlexiPage assignment XML template
   scripts/
-    setup.ps1               # Windows entry point
-    setup.sh                # macOS/Linux entry point
-    lib/                    # Shared setup logic
+    setup.ps1               # Windows entry point (self-contained)
+    setup.sh                # macOS/Linux entry point (self-contained)
     apex/post-setup-custom-objects.apex  # Placeholder resolution on package objects
     apex/post-setup-entities.apex      # Public group setup (separate transaction)
   sfdx-project.json         # Minimal project file for metadata deploy only
@@ -145,9 +146,6 @@ If a field stores Salesforce Ids that cannot be resolved during import, keep pla
 Validate CLI + target org
         |
         v
-Show org summary + check user permissions
-        |
-        v
 Install Appero Quote package (04t...)
         |
         v
@@ -192,7 +190,7 @@ Edit the two scripts above to adjust placeholder mappings, demo settings, or gro
 
 - **Single run**: intended for a fresh demo setup, not repeated upgrades or resets
 - **Running user only**: permission sets target the authenticated user
-- **No FlexiPage automation**: assign record pages for Account, Opportunity, and Product2 manually in **Appero Quote** and **Appero Quote Setup**, or enable `Deploy-FlexipageAssignments` / `deploy_flexipage_assignments` once `config/flexipages.json` is complete
+- **No FlexiPage automation**: assign record pages for Account, Opportunity, and Product2 manually in **Appero Quote** and **Appero Quote Setup**
 - **Manual release updates**: bump `packageVersionId` in config when Appero publishes a new version
 - **Import plan required**: setup skips data import if `data/import-plan.json` has no entries
 
@@ -200,8 +198,9 @@ Edit the two scripts above to adjust placeholder mappings, demo settings, or gro
 
 | Issue | Likely cause |
 |-------|----------------|
-| Permission check fails | User profile lacks install/customize permissions |
-| Package install fails | Invalid `04t` Id, missing license, or org restrictions |
+| PowerShell script blocked | Windows antivirus flagged the script — try `Unblock-File` on `scripts/setup.ps1`, add a folder exclusion, or use Git Bash + `setup.sh` |
+| Package install fails | Invalid `04t` Id, missing license, missing install permissions, or org restrictions |
+| Permission set assign fails | Package not installed, wrong permset API name, or insufficient access |
 | Data import skipped | `import-plan.json` is empty or missing entries |
 | Post-setup Apex fails | Missing static resources, permissions, or placeholder data |
 | Wrong record pages in apps | FlexiPage assignment not automated in v1 — configure manually in Setup |
