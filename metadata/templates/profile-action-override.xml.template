@@ -1,0 +1,8 @@
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>{{FLEXIPAGE}}</content>
+        <formFactor>{{FORM_FACTOR}}</formFactor>
+        <pageOrSobjectType>{{OBJECT}}</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>{{PROFILE}}</profile>
+    </profileActionOverrides>

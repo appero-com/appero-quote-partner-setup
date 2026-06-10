@@ -1,0 +1,10 @@
+# Salesforce CLI local auth and cache
+.sf/
+.sfdx/
+
+# Generated metadata (created at setup time from partner profile)
+metadata/generated/
+
+# OS files
+.DS_Store
+Thumbs.db

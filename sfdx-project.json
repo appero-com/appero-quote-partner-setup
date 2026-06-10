@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "metadata",
+      "default": true
+    }
+  ],
+  "name": "appero-quote-partner-setup",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "66.0"
+}
