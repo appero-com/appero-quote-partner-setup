@@ -8,8 +8,10 @@ Partners authenticate their own org manually, then run a single setup script. No
 
 1. Installs the pinned Appero Quote package version
 2. Assigns namespaced permission sets to the authenticated user
-3. Imports demo data via `sf data import tree`
-4. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
+3. Deploys letterhead static resources (`image`, `image_SecondPage`) from `metadata/staticresources`
+4. Imports demo data via `sf data import tree` (all objects except `PricebookEntry`)
+5. Creates standard and custom pricebook entries via Apex (not importable via tree JSON)
+6. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
 
 FlexiPage assignment for **Appero Quote** and **Appero Quote Setup** is **not included in v1** and must be done manually in the org until `config/flexipages.json` is finalized.
 
@@ -84,13 +86,16 @@ appero-quote-partner-setup/
     import-plan.json        # sf data import tree plan (used by setup scripts)
     *.json                  # Demo data files in sObject tree format
   metadata/
+    staticresources/        # Letterhead PNGs deployed before post-setup Apex
     generated/              # Created at runtime (gitignored)
     templates/              # FlexiPage assignment XML template
   scripts/
     setup.ps1               # Windows entry point (self-contained)
     setup.sh                # macOS/Linux entry point (self-contained)
+    apex/create-pricebook-entries.apex   # Standard + custom PricebookEntry rows
     apex/post-setup-custom-objects.apex  # Placeholder resolution on package objects
-    apex/post-setup-entities.apex      # Public group setup (separate transaction)
+    apex/post-setup-entities.apex        # Public group setup (separate transaction)
+    apex/reset-import-data.apex          # Deletes imported demo data (test orgs only)
   sfdx-project.json         # Minimal project file for metadata deploy only
 ```
 
@@ -133,12 +138,14 @@ Reserved for automated FlexiPage assignment. **Not used in v1.** When enabled, t
 
 The `data/` folder contains:
 
-- **`import-plan.json`** — import plan consumed by `sf data import tree`. Each entry lists an sObject, its JSON file(s), and `saveRefs` / `resolveRefs` flags for cross-file reference resolution.
+- **`import-plan.json`** — import plan consumed by `sf data import tree`. Each entry lists an sObject and its JSON file(s). Lookup fields use `@referenceId` values that resolve within the same import run.
 - **Numbered `*.json` files** — records in sObject tree format.
 
-When you refresh demo data from a golden org, update the JSON files and verify `import-plan.json` still lists the correct files in dependency order.
+`PricebookEntry` rows are **not** imported via JSON. The org standard price book cannot be referenced in tree import files, and custom entries require standard entries first. Prices are created by `scripts/apex/create-pricebook-entries.apex` after the tree import.
 
-If a field stores Salesforce Ids that cannot be resolved during import, keep placeholder tokens in the JSON and resolve them in `scripts/apex/post-setup-custom-objects.apex`.
+When you refresh demo data from a golden org, update the JSON files and verify `import-plan.json` still lists the correct files in dependency order. If product prices change, update the price map in `create-pricebook-entries.apex`.
+
+If a field stores Salesforce Ids that cannot be resolved during import, use `@referenceId` tokens in the JSON or resolve them in `scripts/apex/post-setup-custom-objects.apex`.
 
 ## Setup flow
 
@@ -152,7 +159,13 @@ Install Appero Quote package (04t...)
 Assign permission sets to running user
         |
         v
-Import demo data (tree import)
+Deploy letterhead static resources
+        |
+        v
+Import demo data (tree import, no PricebookEntry)
+        |
+        v
+Create pricebook entries (Apex)
         |
         v
 Run post-setup custom objects Apex
@@ -161,7 +174,13 @@ Run post-setup custom objects Apex
 Run post-setup setup entities Apex
 ```
 
-## Post-setup Apex scripts
+## Apex scripts
+
+### `scripts/apex/create-pricebook-entries.apex`
+
+Runs after the tree import. Queries the org standard price book and the demo custom price book (`Name = 'Standard'`), then inserts `PricebookEntry` rows for all demo products by product name. Skips entries that already exist.
+
+### Post-setup scripts
 
 Post-setup runs as **two separate anonymous Apex scripts** to avoid mixed DML errors between package custom objects and setup entities (`Group`, `GroupMember`).
 
@@ -169,7 +188,7 @@ Post-setup runs as **two separate anonymous Apex scripts** to avoid mixed DML er
 
 Runs after data import. Currently:
 
-1. Creates letterhead `Document` records from package static resources
+1. Creates letterhead `Document` records from org static resources (`image`, `image_SecondPage`)
 2. Resolves quote style page placeholders (`Placeholder1stPage`, `Placeholder2ndPage`)
 3. Resolves product group placeholders on `sf42_quotefx__SF42_GenLineItem__c` line items
 
@@ -202,7 +221,9 @@ Edit the two scripts above to adjust placeholder mappings, demo settings, or gro
 | Package install fails | Invalid `04t` Id, missing license, missing install permissions, or org restrictions |
 | Permission set assign fails | Package not installed, wrong permset API name, or insufficient access |
 | Data import skipped | `import-plan.json` is empty or missing entries |
-| Post-setup Apex fails | Missing static resources, permissions, or placeholder data |
+| Pricebook entry Apex fails | Tree import did not create products or the custom `Standard` price book |
+| Static resource deploy fails | User lacks deploy permissions, or `metadata/staticresources` is missing |
+| Post-setup Apex fails | Static resources not deployed, missing permissions, or placeholder data |
 | Wrong record pages in apps | FlexiPage assignment not automated in v1 — configure manually in Setup |
 
 ## Support

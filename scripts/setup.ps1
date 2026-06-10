@@ -22,6 +22,8 @@ $RepoRoot = Split-Path $PSScriptRoot -Parent
 $PackageConfigPath = Join-Path $RepoRoot 'config\package-version.json'
 $PermsetConfigPath = Join-Path $RepoRoot 'config\permsets.json'
 $ImportPlanPath = Join-Path $RepoRoot 'data\import-plan.json'
+$StaticResourcesPath = Join-Path $RepoRoot 'metadata\staticresources'
+$CreatePricebookEntriesApexPath = Join-Path $RepoRoot 'scripts\apex\create-pricebook-entries.apex'
 
 $packageConfig = Get-Content $PackageConfigPath -Raw | ConvertFrom-Json
 $packageId = $packageConfig.packageVersionId
@@ -45,12 +47,20 @@ foreach ($permset in $permsetConfig.permissionSets) {
     if ($LASTEXITCODE -ne 0) { exit 1 }
 }
 
+Write-Host 'Deploying letterhead static resources ...'
+sf project deploy start --source-dir $StaticResourcesPath --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
 $importPlan = Get-Content $ImportPlanPath -Raw | ConvertFrom-Json
 $importCount = if ($importPlan -is [System.Array]) { $importPlan.Count } else { 0 }
 
 if ($importCount -gt 0) {
     Write-Host "Importing demo data ($importCount objects) ..."
     sf data import tree --plan $ImportPlanPath --target-org $TargetOrg
+    if ($LASTEXITCODE -ne 0) { exit 1 }
+
+    Write-Host 'Creating pricebook entries ...'
+    sf apex run --file $CreatePricebookEntriesApexPath --target-org $TargetOrg
     if ($LASTEXITCODE -ne 0) { exit 1 }
 } else {
     Write-Warning 'data/import-plan.json has no import entries. Skipping data import.'

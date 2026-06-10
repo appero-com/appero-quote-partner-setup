@@ -32,16 +32,19 @@ List<StaticResource> firstPageResources = [
     SELECT Id, Body
     FROM StaticResource
     WHERE Name = 'image'
-    WITH SECURITY_ENFORCED
     LIMIT 1
 ];
 List<StaticResource> secondPageResources = [
     SELECT Id, Body
     FROM StaticResource
     WHERE Name = 'image_SecondPage'
-    WITH SECURITY_ENFORCED
     LIMIT 1
 ];
+
+System.Assert.isFalse(
+    firstPageResources.isEmpty() || secondPageResources.isEmpty(),
+    'Missing static resources image and/or image_SecondPage. Deploy metadata/staticresources first.'
+);
 
 List<Document> docs = new List<Document>{
     new Document(

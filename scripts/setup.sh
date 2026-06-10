@@ -75,11 +75,21 @@ if [[ "$PERMSET_COUNT" -eq 0 ]]; then
   exit 1
 fi
 
+echo "Deploying letterhead static resources ..."
+sf project deploy start \
+  --source-dir "${REPO_ROOT}/metadata/staticresources" \
+  --target-org "$TARGET_ORG"
+
 IMPORT_COUNT="$(grep -c '"sobject"' "${REPO_ROOT}/data/import-plan.json" || true)"
 if [[ "$IMPORT_COUNT" -gt 0 ]]; then
   echo "Importing demo data (${IMPORT_COUNT} objects) ..."
   sf data import tree \
     --plan "${REPO_ROOT}/data/import-plan.json" \
+    --target-org "$TARGET_ORG"
+
+  echo "Creating pricebook entries ..."
+  sf apex run \
+    --file "${REPO_ROOT}/scripts/apex/create-pricebook-entries.apex" \
     --target-org "$TARGET_ORG"
 else
   echo "Warning: data/import-plan.json has no import entries. Skipping data import."

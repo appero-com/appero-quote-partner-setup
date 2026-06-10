@@ -1,98 +1,58 @@
 [
   {
     "sobject": "sf42_quotefx__SF42_Discount_Type__c",
-    "saveRefs": true,
-    "resolveRefs": false,
     "files": ["1-sf42_quotefx__SF42_Discount_Type__c.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_Account_Group__c",
-    "saveRefs": true,
-    "resolveRefs": false,
     "files": ["2-sf42_quotefx__SF42_Account_Group__c.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_QuoteStyle__c",
-    "saveRefs": true,
-    "resolveRefs": false,
     "files": ["3-sf42_quotefx__SF42_QuoteStyle__c-Styles.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_productGroup__c",
-    "saveRefs": true,
-    "resolveRefs": false,
     "files": ["4-sf42_quotefx__SF42_productGroup__c.json"]
   },
   {
     "sobject": "Pricebook2",
-    "saveRefs": true,
-    "resolveRefs": false,
     "files": ["5-Pricebook2.json"]
   },
   {
     "sobject": "Account",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["6-Account.json"]
   },
   {
     "sobject": "Contact",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["7-Contact.json"]
   },
   {
     "sobject": "Product2",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["8-Product2.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_QuoProductProperty__c",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["9-sf42_quotefx__SF42_QuoProductProperty__c.json"]
   },
   {
-    "sobject": "PricebookEntry",
-    "saveRefs": true,
-    "resolveRefs": true,
-    "files": ["10-PricebookEntry-Standard Pricebook.json"]
-  },
-  {
-    "sobject": "PricebookEntry",
-    "saveRefs": true,
-    "resolveRefs": true,
-    "files": ["11-PricebookEntry-Custom Pricebook.json"]
-  },
-  {
     "sobject": "sf42_quotefx__SF42_ProductEntry__c",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["12-sf42_quotefx__SF42_ProductEntry__c.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_Quote__c",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["13-sf42_quotefx__SF42_Quote__c.json"]
   },
   {
     "sobject": "Opportunity",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["14-Opportunity.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_Discount_Matrix__c",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["15-sf42_quotefx__SF42_Discount_Matrix__c.json"]
   },
   {
     "sobject": "sf42_quotefx__SF42_GenLineItem__c",
-    "saveRefs": true,
-    "resolveRefs": true,
     "files": ["16-sf42_quotefx__SF42_GenLineItem__c.json"]
   }
 ]

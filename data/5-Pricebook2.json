@@ -7,14 +7,6 @@
       },
       "Name": "Standard",
       "IsActive": true
-    },
-    {
-      "attributes": {
-        "type": "Pricebook2",
-        "referenceId": "StandardPriceBook"
-      },
-      "Name": "Standard Price Book",
-      "IsActive": true
     }
   ]
 }
