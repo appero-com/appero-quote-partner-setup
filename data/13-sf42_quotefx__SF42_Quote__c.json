@@ -38,8 +38,8 @@
       "sf42_quotefx__SF42_QuoUpdateHTML__c": false,
       "sf42_quotefx__SF42_QuoUseCustomAddress__c": true,
       "sf42_quotefx__SF42_QuoUseCustomSender__c": true,
-      "sf42_quotefx__SF42_QuoteStyle__c": "StyleRef2",
-      "sf42_quotefx__SF42_PriceBook__c": "PriceBookRef1",
+      "sf42_quotefx__SF42_QuoteStyle__c": "@StyleRef2",
+      "sf42_quotefx__SF42_PriceBook__c": "@PriceBookRef1",
       "sf42_quotefx__SF42_blank__c": false,
       "sf42_quotefx__SF42_CopyProductsToOpportunity__c": false,
       "sf42_quotefx__SF42_QuoTotalDiscount__c": 0
@@ -54,7 +54,7 @@
       "sf42_quotefx__SF42_ColumnLayout__c": "basic:Position:35:1:true:true:center:Pos.,basic:Description:170:2:true:true:left:Description,product:Listprice:80:3:true:true:right:Listprice,customer:Discount:75:4:true:true:right:Discount,customer:Endprice:80:5:true:true:right:Endprice,basic:VE:70:6:true:true:right:Months,product:Quantity:65:7:true:true:center:Quantity,product:Sumprice:80:8:true:true:right:Sumprice,basic:Productcode:100:9:false:false:left:Productcode,basic:xcolumn1:80:10:false:false:left:xcolumn1,basic:xcolumn2:80:11:false:false:left:xcolumn2,product:SumListprice:80:12:false:false:right:SumListprice,dist:DiscountDist:50:13:false:false:right:DiscountDist,dist:SpecialDiscountDist:50:14:false:false:right:SpecialDiscountDist,dist:BuyPriceDist:80:15:false:false:right:BuyPriceDist,dist:SumPriceDist:80:16:false:false:right:SumPriceDist,partner:DiscountPartner:50:17:false:false:right:DiscountPartner,partner:SpecialDiscountPartner:50:18:false:false:right:SpecialDiscountPartner,partner:SpecialDiscount:50:19:false:false:right:SpecialDiscount,partner:BuyPricePartner:80:20:false:false:right:BuyPricePartner,partner:SumPricePartner:80:21:false:false:right:SumPricePartner,basic:Tax:50:22:false:false:right:Tax,basic:QuantityMultiplier:50:23:false:false:right:QuantityMultiplier,:QuantityUnitOfMeasure:50:24:false:false:right:QuantityUnitOfMeasure,:Discount2:50:25:false:false:right:Discount 2,:Discount3:50:26:false:false:right:Discount 3,:Discount4:50:27:false:false:right:Discount 4,basic:ServiceDate:50:28:false:false:right:Service Date",
       "sf42_quotefx__SF42_CopyProductsToOpportunity__c": false,
       "sf42_quotefx__SF42_IgnoreMulticurrency__c": false,
-      "sf42_quotefx__SF42_PriceBook__c": "PriceBookRef1",
+      "sf42_quotefx__SF42_PriceBook__c": "@PriceBookRef1",
       "sf42_quotefx__SF42_QuoCustomAddressHtml__c": "<p> </p>",
       "sf42_quotefx__SF42_QuoCustomAddress__c": "<p> </p>",
       "sf42_quotefx__SF42_QuoDate__c": "2026-02-16",
@@ -84,7 +84,7 @@
       "sf42_quotefx__SF42_QuoUpdateHTML__c": false,
       "sf42_quotefx__SF42_QuoUseCustomAddress__c": true,
       "sf42_quotefx__SF42_QuoUseCustomSender__c": true,
-      "sf42_quotefx__SF42_QuoteStyle__c": "StyleRef2",
+      "sf42_quotefx__SF42_QuoteStyle__c": "@StyleRef2",
       "sf42_quotefx__SF42_Tax_Quote__c": 0,
       "sf42_quotefx__SF42_blank__c": false
     }

@@ -6,7 +6,7 @@
         "referenceId": "AccountRef7"
       },
       "Name": "John Doe Inc.",
-      "sf42_quotefx__SF42_Account_Group__c": "AccountGroupRef1",
+      "sf42_quotefx__SF42_Account_Group__c": "@AccountGroupRef1",
       "Type": "Customer - Direct",
       "BillingStreet": "1301 Avenue of the Americas \r\nNew York, NY 10019\r\nUSA",
       "BillingCity": "New York",

@@ -5,8 +5,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef32"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef3",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef3",
       "UnitPrice": 42,
       "IsActive": true,
       "UseStandardPrice": false
@@ -16,8 +16,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef33"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef2",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef2",
       "UnitPrice": 0,
       "IsActive": true,
       "UseStandardPrice": false
@@ -27,8 +27,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef35"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef1",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef1",
       "UnitPrice": 9990,
       "IsActive": true,
       "UseStandardPrice": false
@@ -38,8 +38,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef43"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef22",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef22",
       "UnitPrice": 0,
       "IsActive": true,
       "UseStandardPrice": false
@@ -49,8 +49,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef44"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef23",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef23",
       "UnitPrice": 990,
       "IsActive": true,
       "UseStandardPrice": false
@@ -60,8 +60,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef45"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef24",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef24",
       "UnitPrice": 3450,
       "IsActive": true,
       "UseStandardPrice": false
@@ -71,8 +71,8 @@
         "type": "PricebookEntry",
         "referenceId": "PriceBookEntryRef46"
       },
-      "Pricebook2Id": "PriceBookRef1",
-      "Product2Id": "ProductRef25",
+      "Pricebook2Id": "@PriceBookRef1",
+      "Product2Id": "@ProductRef25",
       "UnitPrice": 0,
       "IsActive": true,
       "UseStandardPrice": false

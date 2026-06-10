@@ -6,9 +6,9 @@
         "referenceId": "DiscountMatrixRef1"
       },
       "Name": "Loyalty Discount",
-      "sf42_quotefx__SF42_Account__c": "AccountRef7",
+      "sf42_quotefx__SF42_Account__c": "@AccountRef7",
       "sf42_quotefx__SF42_DiscountLimit__c": 30,
-      "sf42_quotefx__SF42_DiscountType__c": "DiscountTypeRef2",
+      "sf42_quotefx__SF42_DiscountType__c": "@DiscountTypeRef2",
       "sf42_quotefx__SF42_Discount__c": 20,
       "sf42_quotefx__SF42_isActive__c": true,
       "sf42_quotefx__SF42_isProductDiscount__c": false,

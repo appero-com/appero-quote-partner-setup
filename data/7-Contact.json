@@ -5,7 +5,7 @@
         "type": "Contact",
         "referenceId": "ContactRef4"
       },
-      "AccountId": "AccountRef7",
+      "AccountId": "@AccountRef7",
       "LastName": "Green",
       "FirstName": "Avi",
       "Salutation": "Mr.",
@@ -28,7 +28,7 @@
         "type": "Contact",
         "referenceId": "ContactRef11"
       },
-      "AccountId": "AccountRef7",
+      "AccountId": "@AccountRef7",
       "LastName": "Pavlova",
       "FirstName": "Stella",
       "Salutation": "Ms.",
@@ -52,7 +52,7 @@
         "type": "Contact",
         "referenceId": "ContactRef12"
       },
-      "AccountId": "AccountRef7",
+      "AccountId": "@AccountRef7",
       "LastName": "Boyle",
       "FirstName": "Lauren",
       "Salutation": "Ms.",
@@ -73,7 +73,7 @@
         "type": "Contact",
         "referenceId": "ContactRef16"
       },
-      "AccountId": "AccountRef7",
+      "AccountId": "@AccountRef7",
       "LastName": "Song",
       "FirstName": "Arthur",
       "Salutation": "Mr.",
