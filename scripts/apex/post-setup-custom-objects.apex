@@ -25,7 +25,7 @@ List<sf42_quotefx__SF42_QuoteStyle__c> styles = [
            sf42_quotefx__SF42_FirstPageDocumentID__c,
            sf42_quotefx__SF42_SecondPageDocumentId__c
     FROM sf42_quotefx__SF42_QuoteStyle__c
-    WITH SECURITY_ENFORCED
+    WITH USER_MODE
 ];
 
 List<StaticResource> firstPageResources = [
@@ -77,7 +77,7 @@ Map<String, Id> productGroupNameToId = new Map<String, Id>();
 for (sf42_quotefx__SF42_ProductGroup__c productGroup : [
     SELECT Id, Name
     FROM sf42_quotefx__SF42_ProductGroup__c
-    WITH SECURITY_ENFORCED
+    WITH USER_MODE
 ]) {
     productGroupNameToId.put(productGroup.Name, productGroup.Id);
 }
@@ -86,7 +86,7 @@ List<sf42_quotefx__SF42_GenLineItem__c> changedPositions = new List<sf42_quotefx
 for (sf42_quotefx__SF42_GenLineItem__c position : [
     SELECT Id, sf42_quotefx__SF42_QuoLI_GroupID__c
     FROM sf42_quotefx__SF42_GenLineItem__c
-    WITH SECURITY_ENFORCED
+    WITH USER_MODE
 ]) {
     String groupIdValue = position.sf42_quotefx__SF42_QuoLI_GroupID__c;
     if (groupIdValue == null || groupIdValue == '-') {
