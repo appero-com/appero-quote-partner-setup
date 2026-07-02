@@ -5,7 +5,7 @@
         "type": "sf42_quotefx__sf42_ProductEntry__c",
         "referenceId": "AddonProductRef1"
       },
-      "Name": "Addon 1 Lizenz",
+      "Name": "Addon 1 License",
       "sf42_quotefx__sf42_DiscountNotEditable__c": false,
       "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
       "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
@@ -20,7 +20,7 @@
         "type": "sf42_quotefx__sf42_ProductEntry__c",
         "referenceId": "AddonProductRef2"
       },
-      "Name": "Addon 3 Lizenz",
+      "Name": "Addon 3 License",
       "sf42_quotefx__sf42_DiscountNotEditable__c": false,
       "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
       "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
@@ -35,7 +35,7 @@
         "type": "sf42_quotefx__sf42_ProductEntry__c",
         "referenceId": "AddonProductRef3"
       },
-      "Name": "Addon 2 Lizenz",
+      "Name": "Addon 2 License",
       "sf42_quotefx__sf42_DiscountNotEditable__c": false,
       "sf42_quotefx__sf42_DisplayOptions__c": "Everywhere",
       "sf42_quotefx__sf42_IgnoreBulkPrices__c": false,
