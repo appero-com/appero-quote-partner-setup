@@ -1,6 +1,9 @@
 // Creates standard and custom PricebookEntry rows for demo products.
 // The org standard price book cannot be referenced via sf data import tree JSON.
+// Custom demo price book is imported as "appero Pricebook" (5-Pricebook2.json).
 // Run after sf data import tree completes.
+
+String customPricebookName = 'appero Pricebook';
 
 System.debug('Appero Quote: creating pricebook entries');
 
@@ -21,10 +24,10 @@ Id standardPricebookId = [
     LIMIT 1
 ].Id;
 
-Id customPricebookId = [
+Id apperoPricebookId = [
     SELECT Id
     FROM Pricebook2
-    WHERE Name = 'Standard' AND IsStandard = false
+    WHERE Name = :customPricebookName AND IsStandard = false
     LIMIT 1
 ].Id;
 
@@ -38,7 +41,7 @@ Set<String> existingKeys = new Set<String>();
 for (PricebookEntry existing : [
     SELECT Product2Id, Pricebook2Id
     FROM PricebookEntry
-    WHERE Pricebook2Id IN :new Set<Id>{ standardPricebookId, customPricebookId }
+    WHERE Pricebook2Id IN :new Set<Id>{ standardPricebookId, apperoPricebookId }
       AND Product2Id IN :productsById.keySet()
 ]) {
     existingKeys.add(existing.Product2Id + ':' + existing.Pricebook2Id);
