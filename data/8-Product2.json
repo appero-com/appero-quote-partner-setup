@@ -63,7 +63,7 @@
     {
       "attributes": {
         "type": "Product2",
-        "referenceId": "ProductRef22"
+        "referenceId": "ProductRef4"
       },
       "Name": "appero quote Starter Bundle",
       "IsActive": true,
@@ -82,7 +82,7 @@
     {
       "attributes": {
         "type": "Product2",
-        "referenceId": "ProductRef23"
+        "referenceId": "ProductRef5"
       },
       "Name": "Approval Process Implementation",
       "Description": "Setting up a standardised approval process for the appero quote object in Salesforce.",
@@ -102,7 +102,7 @@
     {
       "attributes": {
         "type": "Product2",
-        "referenceId": "ProductRef24"
+        "referenceId": "ProductRef6"
       },
       "Name": "appero quote Admin Training",
       "Description": "Individual training for administrators and users (2 person days) on site by a certified Salesforce.com employee.\n\nMax. of 20 participants.\nTraining materials and documentation are included.",
@@ -122,11 +122,20 @@
     {
       "attributes": {
         "type": "Product2",
-        "referenceId": "ProductRef25"
+        "referenceId": "ProductRef7"
       },
       "Name": "Discount Product",
       "IsActive": true,
       "sf42_quotefx__SF42_IsDiscountProduct__c": true
+    },
+    {
+      "attributes": {
+        "type": "Product2",
+        "referenceId": "ProductRef8"
+      },
+      "Name": "Price Rebate Product",
+      "IsActive": true,
+      "sf42_quotefx__SF42_IsPriceRebateProduct__c": true
     }
   ]
 }

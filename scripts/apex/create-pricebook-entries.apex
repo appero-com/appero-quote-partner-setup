@@ -14,7 +14,8 @@ Map<String, Decimal> productNameToUnitPrice = new Map<String, Decimal>{
     'appero quote Starter Bundle' => 0,
     'Approval Process Implementation' => 990,
     'appero quote Admin Training' => 3450,
-    'Discount Product' => 0
+    'Discount Product' => 0,
+    'Price Rebate Product' => 0
 };
 
 Id standardPricebookId = [
@@ -50,7 +51,7 @@ for (PricebookEntry existing : [
 List<PricebookEntry> entries = new List<PricebookEntry>();
 for (Product2 product : productsById.values()) {
     Decimal unitPrice = productNameToUnitPrice.get(product.Name);
-    for (Id pricebookId : new List<Id>{ standardPricebookId, customPricebookId }) {
+    for (Id pricebookId : new List<Id>{ standardPricebookId, apperoPricebookId }) {
         String key = product.Id + ':' + pricebookId;
         if (!existingKeys.contains(key)) {
             entries.add(new PricebookEntry(
