@@ -51,6 +51,16 @@ Write-Host 'Deploying letterhead static resources ...'
 sf project deploy start --source-dir $StaticResourcesPath --target-org $TargetOrg
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
+$FlexiPagesPath = Join-Path $RepoRoot 'metadata\flexipages'
+$ApplicationsPath = Join-Path $RepoRoot 'metadata\applications'
+Write-Host 'Deploying Lightning record pages ...'
+sf project deploy start --source-dir $FlexiPagesPath --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
+Write-Host 'Deploying app record page assignments ...'
+sf project deploy start --source-dir $ApplicationsPath --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
 $importPlan = Get-Content $ImportPlanPath -Raw | ConvertFrom-Json
 $importCount = if ($importPlan -is [System.Array]) { $importPlan.Count } else { 0 }
 
@@ -84,5 +94,5 @@ Write-Host 'Open these Lightning apps in your org:'
 Write-Host '  - Appero Quote'
 Write-Host '  - Appero Quote Setup'
 Write-Host ''
-Write-Host 'Note: FlexiPage assignment is not automated in v1. Assign record pages manually if needed.'
+Write-Host 'Note: FlexiPage assignment is automated via metadata deploy for Account, Opportunity, and Product2.'
 Write-Host ''

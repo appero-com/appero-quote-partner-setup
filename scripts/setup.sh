@@ -80,6 +80,16 @@ sf project deploy start \
   --source-dir "${REPO_ROOT}/metadata/staticresources" \
   --target-org "$TARGET_ORG"
 
+echo "Deploying Lightning record pages ..."
+sf project deploy start \
+  --source-dir "${REPO_ROOT}/metadata/flexipages" \
+  --target-org "$TARGET_ORG"
+
+echo "Deploying app record page assignments ..."
+sf project deploy start \
+  --source-dir "${REPO_ROOT}/metadata/applications" \
+  --target-org "$TARGET_ORG"
+
 IMPORT_COUNT="$(grep -c '"sobject"' "${REPO_ROOT}/data/import-plan.json" || true)"
 if [[ "$IMPORT_COUNT" -gt 0 ]]; then
   echo "Importing demo data (${IMPORT_COUNT} objects) ..."
@@ -117,6 +127,6 @@ Open these Lightning apps in your org:
   - Appero Quote
   - Appero Quote Setup
 
-Note: FlexiPage assignment is not automated in v1. Assign record pages manually if needed.
+Note: FlexiPage assignment is automated via metadata deploy for Account, Opportunity, and Product2.
 
 EOF

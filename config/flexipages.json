@@ -1,41 +1,28 @@
 {
-  "comment": "Replace placeholder API names with values from your golden demo org. No record-type-specific assignments.",
-  "formFactors": ["Large", "Small"],
+  "comment": "Partner demo record pages and app-default (profile-independent) assignments for Appero Quote apps.",
+  "formFactors": ["Large"],
+  "recordPages": {
+    "Account": "apperoAccountRecordPage",
+    "Opportunity": "apperoOpportunityRecordPage",
+    "Product2": "apperoProductRecordPage"
+  },
   "apps": [
     {
-      "apiName": "sf42_quotefx__PLACEHOLDER_Appero_Quote_App",
+      "apiName": "sf42_quotefx__apo_Quote",
       "label": "Appero Quote",
       "assignments": [
-        {
-          "object": "Account",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Account_FlexiPage"
-        },
-        {
-          "object": "Opportunity",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Opportunity_FlexiPage"
-        },
-        {
-          "object": "Product2",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Product2_FlexiPage"
-        }
+        { "object": "Account", "flexipage": "apperoAccountRecordPage" },
+        { "object": "Opportunity", "flexipage": "apperoOpportunityRecordPage" },
+        { "object": "Product2", "flexipage": "apperoProductRecordPage" }
       ]
     },
     {
-      "apiName": "sf42_quotefx__PLACEHOLDER_Appero_Quote_Setup_App",
+      "apiName": "sf42_quotefx__apo_Setup",
       "label": "Appero Quote Setup",
       "assignments": [
-        {
-          "object": "Account",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Account_FlexiPage"
-        },
-        {
-          "object": "Opportunity",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Opportunity_FlexiPage"
-        },
-        {
-          "object": "Product2",
-          "flexipage": "sf42_quotefx__PLACEHOLDER_Setup_Product2_FlexiPage"
-        }
+        { "object": "Account", "flexipage": "apperoAccountRecordPage" },
+        { "object": "Opportunity", "flexipage": "apperoOpportunityRecordPage" },
+        { "object": "Product2", "flexipage": "apperoProductRecordPage" }
       ]
     }
   ]
