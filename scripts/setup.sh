@@ -95,6 +95,11 @@ else
   echo "Warning: data/import-plan.json has no import entries. Skipping data import."
 fi
 
+echo "Creating quote setup parameters ..."
+sf apex run \
+  --file "${REPO_ROOT}/scripts/apex/setup-quote-parameters.apex" \
+  --target-org "$TARGET_ORG"
+
 echo "Running post-setup custom objects Apex ..."
 sf apex run \
   --file "${REPO_ROOT}/scripts/apex/post-setup-custom-objects.apex" \

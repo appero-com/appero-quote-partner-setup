@@ -66,6 +66,10 @@ if ($importCount -gt 0) {
     Write-Warning 'data/import-plan.json has no import entries. Skipping data import.'
 }
 
+Write-Host 'Creating quote setup parameters ...'
+sf apex run --file (Join-Path $RepoRoot 'scripts\apex\setup-quote-parameters.apex') --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+
 Write-Host 'Running post-setup custom objects Apex ...'
 sf apex run --file (Join-Path $RepoRoot 'scripts\apex\post-setup-custom-objects.apex') --target-org $TargetOrg
 if ($LASTEXITCODE -ne 0) { exit 1 }
