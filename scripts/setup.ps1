@@ -7,8 +7,8 @@ if (-not $TargetOrg) {
     Write-Error @"
 No target org specified.
 
-  sf org login web --alias my-demo-org
-  .\scripts\setup.ps1 -TargetOrg my-demo-org
+  sf org login web --alias MY-ALIAS
+  .\scripts\setup.ps1 -TargetOrg MY-ALIAS
 "@
     exit 1
 }
@@ -33,6 +33,9 @@ if ($packageId -match 'PLACEHOLDER|^04tX+$') {
 }
 
 Write-Host "Setting up Appero Quote demo for org $TargetOrg ..."
+
+# TIMING (remove before release)
+$setupStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
 Write-Host "Installing Appero Quote package $packageId ..."
 sf package install --package $packageId --target-org $TargetOrg --wait 30 --no-prompt --security-type AllUsers
@@ -83,5 +86,7 @@ Write-Host 'Open these Lightning apps in your org:'
 Write-Host '  - Appero Quote'
 Write-Host '  - Appero Quote Setup'
 Write-Host ''
-Write-Host 'Note: FlexiPage assignment is automated via metadata deploy for Account, Opportunity, and Product2.'
+
+# TIMING (remove before release)
+Write-Host ("Setup completed in {0:N0} seconds." -f $setupStopwatch.Elapsed.TotalSeconds)
 Write-Host ''

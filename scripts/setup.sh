@@ -9,8 +9,8 @@ usage() {
 Usage: ./scripts/setup.sh --target-org <alias>
 
 Example:
-  sf org login web --alias my-demo-org
-  ./scripts/setup.sh --target-org my-demo-org
+  sf org login web --alias MY-ALIAS
+  ./scripts/setup.sh --target-org MY-ALIAS
 EOF
 }
 
@@ -52,6 +52,9 @@ if [[ -z "$PACKAGE_ID" ]] || [[ "$PACKAGE_ID" == *PLACEHOLDER* ]] || [[ "$PACKAG
 fi
 
 echo "Setting up Appero Quote demo for org ${TARGET_ORG} ..."
+
+# TIMING (remove before release)
+SETUP_START=$SECONDS
 
 echo "Installing Appero Quote package ${PACKAGE_ID} ..."
 sf package install \
@@ -114,6 +117,7 @@ Open these Lightning apps in your org:
   - Appero Quote
   - Appero Quote Setup
 
-Note: FlexiPage assignment is automated via metadata deploy for Account, Opportunity, and Product2.
-
 EOF
+
+# TIMING (remove before release)
+echo "Setup completed in $((SECONDS - SETUP_START)) seconds."
