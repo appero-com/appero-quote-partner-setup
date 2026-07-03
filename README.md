@@ -1,231 +1,131 @@
 # Appero Quote Partner Demo Setup
 
-Bootstrap kit for Salesforce ISV partners to prepare a demo org for **Appero Quote** using the Salesforce CLI.
+Use this repository to set up a Salesforce org with **Appero Quote** and ready-to-use demo data in a few steps. Authenticate your org with the Salesforce CLI, run one setup script, and open the Appero Quote apps.
 
-Partners authenticate their own org manually, then run a single setup script. No scratch orgs and no full Salesforce DX app project.
+Replace **`MY-ALIAS`** everywhere below with a short name for your org (for example `appero-demo`). Use the same alias for login and for the setup script.
 
-## What this repository does
+## 1. Get the repository
 
-1. Installs the pinned Appero Quote package version
-2. Assigns namespaced permission sets to the authenticated user
-3. Deploys letterhead static resources (`image`, `image_SecondPage`) from `metadata/staticresources`
-4. Imports demo data via `sf data import tree` (all objects except `PricebookEntry`)
-5. Creates standard and custom pricebook entries via Apex (not importable via tree JSON)
-6. Runs two post-setup Apex scripts (custom objects, then setup entities) to resolve placeholders and finalize demo configuration
+Clone with Git **or** download and extract the ZIP — whichever you prefer.
 
-FlexiPage assignment for **Appero Quote** and **Appero Quote Setup** is **not included in v1** and must be done manually in the org until `config/flexipages.json` is finalized.
+**Option A — Git clone**
 
-## Prerequisites
+```bash
+git clone https://github.com/appero-com/appero-quote-partner-setup.git
+cd appero-quote-partner-setup
+```
+
+**Option B — Download ZIP**
+
+1. Download: [appero-quote-partner-setup (main branch ZIP)](https://github.com/appero-com/appero-quote-partner-setup/archive/refs/heads/main.zip)
+2. Extract the archive.
+3. Open a terminal in the extracted folder (`appero-quote-partner-setup-main`).
+
+## 2. Prerequisites
 
 ### Salesforce CLI
 
-Install the Salesforce CLI if it is not already available:
+Install the [Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm) if you do not have it yet. This kit requires **Salesforce CLI v2** (`@salesforce/cli`); use the latest stable release if you can.
 
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
-
-Verify installation:
+Verify the installation:
 
 ```bash
 sf version
 ```
 
-### Authenticated demo org (non-scratch)
+### Org and user
 
-This kit targets orgs you already have access to, such as:
+Use a **dedicated demo org**, not a production or customer org.
+
+**Supported org types**
 
 - Developer Edition
 - Sandbox
-- Trial / partner demo org
+- Trial or partner demo org
+- Scratch org (if it is already connected to the Salesforce CLI)
 
-Authenticate the org before running setup:
+The user who runs setup needs **admin-level access** in that org — for example permission to install packages, customize the application, and deploy metadata. Run setup as the user who will present or use the demo; permission sets are assigned to that user only.
+
+## 3. Authorize your org
+
+Run this once per org. A browser window opens for Salesforce login.
 
 ```bash
-sf org login web --alias my-demo-org
+sf org login web --alias MY-ALIAS
 ```
 
-The authenticated user should have a profile with at least:
+## 4. Run setup
 
-- **Install Packaged Components**
-- **Customize Application**
-
-## Quick start
+Open a terminal in the repository folder (see step 1), then run the command for your operating system.
 
 ### Windows (PowerShell)
 
 ```powershell
-sf org login web --alias my-demo-org
-.\scripts\setup.ps1 -TargetOrg my-demo-org
+.\scripts\setup.ps1 -TargetOrg MY-ALIAS
 ```
+
+If PowerShell blocks the script, try Git Bash (below) or run `Unblock-File .\scripts\setup.ps1` once.
 
 ### macOS / Linux (Bash)
 
+First time only, make the script executable:
+
 ```bash
 chmod +x scripts/setup.sh
-sf org login web --alias my-demo-org
-./scripts/setup.sh --target-org my-demo-org
 ```
 
-### Windows (Git Bash fallback)
-
-If PowerShell is blocked by antivirus software, use Git Bash:
+Then run setup:
 
 ```bash
-./scripts/setup.sh --target-org my-demo-org
+./scripts/setup.sh --target-org MY-ALIAS
 ```
 
-## Repository layout
+### Windows (Git Bash)
 
-```text
-appero-quote-partner-setup/
-  config/
-    package-version.json    # Appero updates the 04t... Id per release
-    permsets.json           # Namespaced permission set API names
-    flexipages.json         # FlexiPage config (reserved for a future release)
-  data/
-    import-plan.json        # sf data import tree plan (used by setup scripts)
-    *.json                  # Demo data files in sObject tree format
-  metadata/
-    staticresources/        # Letterhead PNGs deployed before post-setup Apex
-    generated/              # Created at runtime (gitignored)
-    templates/              # FlexiPage assignment XML template
-  scripts/
-    setup.ps1               # Windows entry point (self-contained)
-    setup.sh                # macOS/Linux entry point (self-contained)
-    apex/create-pricebook-entries.apex   # Standard + custom PricebookEntry rows
-    apex/post-setup-custom-objects.apex  # Placeholder resolution on package objects
-    apex/post-setup-entities.apex        # Public group setup (separate transaction)
-    apex/reset-import-data.apex          # Deletes imported demo data (test orgs only)
-  sfdx-project.json         # Minimal project file for metadata deploy only
+If PowerShell is blocked by antivirus or policy:
+
+```bash
+./scripts/setup.sh --target-org MY-ALIAS
 ```
 
-This is **not** a full SFDX application repository. There is no `force-app/`, LWC source, or scratch org workflow.
+Setup typically takes **10–20 minutes**, depending on your org and network. Most of that time is the Appero Quote package install.
 
-## Configuration (maintained by Appero)
+## 5. After setup
 
-Before partners run setup, Appero maintains the config files below.
+1. Log in to your Salesforce org (same user who ran setup).
+2. Open the **Appero Quote** app for quoting and opportunities.
+3. Open **Appero Quote Setup** for products, templates, and configuration.
+4. Explore the sample account **John Doe Inc.** and the related opportunity to start a demo.
 
-### `config/package-version.json`
+## Good to know
 
-```json
-{
-  "packageVersionId": "04tXXXXXXXXXXXXXXXX"
-}
-```
-
-Update `packageVersionId` when a new subscriber package version is published.
-
-### `config/permsets.json`
-
-List namespaced permission set API names from the installed package:
-
-```json
-{
-  "namespace": "sf42_quotefx",
-  "permissionSets": [
-    "sf42_quotefx__apoQuoteUser",
-    "sf42_quotefx__apoQuoteAdmin",
-    "sf42_quotefx__apperoQuoteLightning"
-  ]
-}
-```
-
-### `config/flexipages.json` (future)
-
-Reserved for automated FlexiPage assignment. **Not used in v1.** When enabled, the setup script will retrieve package Lightning apps, add `profileActionOverrides` for the running user's profile, and deploy `CustomApplication` metadata.
-
-### Demo data files
-
-The `data/` folder contains:
-
-- **`import-plan.json`** — import plan consumed by `sf data import tree`. Each entry lists an sObject and its JSON file(s). Lookup fields use `@referenceId` values that resolve within the same import run.
-- **Numbered `*.json` files** — records in sObject tree format.
-
-`PricebookEntry` rows are **not** imported via JSON. The org standard price book cannot be referenced in tree import files, and custom entries require standard entries first. Prices are created by `scripts/apex/create-pricebook-entries.apex` after the tree import.
-
-When you refresh demo data from a golden org, update the JSON files and verify `import-plan.json` still lists the correct files in dependency order. If product prices change, update the price map in `create-pricebook-entries.apex`.
-
-If a field stores Salesforce Ids that cannot be resolved during import, use `@referenceId` tokens in the JSON or resolve them in `scripts/apex/post-setup-custom-objects.apex`.
-
-## Setup flow
-
-```text
-Validate CLI + target org
-        |
-        v
-Install Appero Quote package (04t...)
-        |
-        v
-Assign permission sets to running user
-        |
-        v
-Deploy letterhead static resources
-        |
-        v
-Import demo data (tree import, no PricebookEntry)
-        |
-        v
-Create pricebook entries (Apex)
-        |
-        v
-Run post-setup custom objects Apex
-        |
-        v
-Run post-setup setup entities Apex
-```
-
-## Apex scripts
-
-### `scripts/apex/create-pricebook-entries.apex`
-
-Runs after the tree import. Queries the org standard price book and the demo custom price book (`Name = 'Standard'`), then inserts `PricebookEntry` rows for all demo products by product name. Skips entries that already exist.
-
-### Post-setup scripts
-
-Post-setup runs as **two separate anonymous Apex scripts** to avoid mixed DML errors between package custom objects and setup entities (`Group`, `GroupMember`).
-
-### `scripts/apex/post-setup-custom-objects.apex`
-
-Runs after data import. Currently:
-
-1. Creates letterhead `Document` records from org static resources (`image`, `image_SecondPage`)
-2. Resolves quote style page placeholders (`Placeholder1stPage`, `Placeholder2ndPage`)
-3. Resolves product group placeholders on `sf42_quotefx__SF42_GenLineItem__c` line items
-
-### `scripts/apex/post-setup-entities.apex`
-
-Runs in a second transaction immediately after the custom-objects script:
-
-1. Creates the `QuoteAdmin` public group
-2. Adds the **authenticated running user** to that group
-
-No deployed Apex class is required for partner setup.
-
-## Customizing post-setup Apex
-
-Edit the two scripts above to adjust placeholder mappings, demo settings, or group setup behavior.
-
-## Limitations (v1)
-
-- **Single run**: intended for a fresh demo setup, not repeated upgrades or resets
-- **Running user only**: permission sets target the authenticated user
-- **No FlexiPage automation**: assign record pages for Account, Opportunity, and Product2 manually in **Appero Quote** and **Appero Quote Setup**
-- **Manual release updates**: bump `packageVersionId` in config when Appero publishes a new version
-- **Import plan required**: setup skips data import if `data/import-plan.json` has no entries
+- **One-time demo setup** — intended for a fresh demo org, not for upgrading an existing Appero Quote installation.
+- **Running user** — permission sets and group membership apply to the user who executed the script.
+- **Demo org only** — do not run this against production or live customer orgs.
+- **Re-running setup** — not supported as a standard workflow; use a fresh demo org if you need a clean state.
 
 ## Troubleshooting
 
-| Issue | Likely cause |
-|-------|----------------|
-| PowerShell script blocked | Windows antivirus flagged the script — try `Unblock-File` on `scripts/setup.ps1`, add a folder exclusion, or use Git Bash + `setup.sh` |
-| Package install fails | Invalid `04t` Id, missing license, missing install permissions, or org restrictions |
-| Permission set assign fails | Package not installed, wrong permset API name, or insufficient access |
-| Data import skipped | `import-plan.json` is empty or missing entries |
-| Pricebook entry Apex fails | Tree import did not create products or the custom `Standard` price book |
-| Static resource deploy fails | User lacks deploy permissions, or `metadata/staticresources` is missing |
-| Post-setup Apex fails | Static resources not deployed, missing permissions, or placeholder data |
-| Wrong record pages in apps | FlexiPage assignment not automated in v1 — configure manually in Setup |
+| Issue | What to try |
+|-------|-------------|
+| PowerShell script blocked | Use Git Bash and `setup.sh`, or `Unblock-File` on `scripts/setup.ps1` |
+| `sf` command not found | Install the Salesforce CLI and restart your terminal |
+| Package install fails | Confirm the org user can install packages and that Appero Quote is licensed for the org |
+| Permission set assignment fails | Ensure package install finished successfully; re-run setup only on a clean org if needed |
+| Deploy or import errors | Confirm the running user has admin-level access; check CLI output for the failing step |
 
-## Support
+For Appero Quote licensing and package questions, contact **Appero support**.
 
-For Appero Quote package licensing and AppExchange installation questions, contact Appero support.
+## What this setup provides
+
+After a successful run, your org includes:
+
+- **Appero Quote** installed and configured for demo use
+- **Permission sets** assigned so you can use the quote apps immediately
+- **Sample account, contacts, products, and pricing** for CPQ-style demonstrations
+- **Quote templates** with line items, bundles, add-ons, and discount examples
+- **English quote styling** with letterhead and email template defaults
+- **Record pages** for Account, Opportunity, and Product tuned for the Appero Quote apps
+- **Appero Quote** and **Appero Quote Setup** Lightning apps ready to open
+
+You can start demonstrating quote creation, product configuration, and document output without manual org preparation.
