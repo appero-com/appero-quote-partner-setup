@@ -104,4 +104,20 @@ for (sf42_quotefx__SF42_GenLineItem__c position : [
 }
 update changedPositions;
 
+String quoteNumberPrefix = 'Quote-';
+Decimal quoteNumberCount = 1;
+List<sf42_quotefx__SF42_Number__c> existingQuoteNumbers = [
+    SELECT Id
+    FROM sf42_quotefx__SF42_Number__c
+    WHERE sf42_quotefx__SF42_Type__c = 'Quote'
+    LIMIT 1
+];
+if (existingQuoteNumbers.isEmpty()) {
+    insert new sf42_quotefx__SF42_Number__c(
+        sf42_quotefx__SF42_Numbertext__c = quoteNumberPrefix,
+        sf42_quotefx__SF42_Count__c = quoteNumberCount,
+        sf42_quotefx__SF42_Type__c = 'Quote'
+    );
+}
+
 System.debug('Appero Quote partner setup: custom objects completed');
