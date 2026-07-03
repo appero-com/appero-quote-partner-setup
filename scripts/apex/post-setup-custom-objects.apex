@@ -7,12 +7,7 @@ Map<String, String> placeholderProductGroupToName = new Map<String, String>{
     'placeholderProductGroup1' => 'Support',
     'placeholderProductGroup2' => 'Licenses',
     'placeholderProductGroup3' => 'One-time Service',
-    'placeholderProductGroup4' => 'Training',
-    'placeholderProductGroup5' => 'Installation',
-    'placeholderProductGroup6' => 'Technical Support',
-    'placeholderProductGroup7' => 'Hardware',
-    'placeholderProductGroup8' => 'Recurring',
-    'placeholderProductGroup9' => 'OneTime'
+    'placeholderProductGroup4' => 'Training'
 };
 
 String placeholderFirstPage = 'Placeholder1stPage';

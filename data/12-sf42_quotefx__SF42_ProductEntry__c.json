@@ -59,7 +59,7 @@
       "sf42_quotefx__sf42_ProductID2__c": "@ProductRef1",
       "sf42_quotefx__sf42_Quantity__c": 1,
       "sf42_quotefx__sf42_Required__c": true,
-      "sf42_quotefx__sf42_Type__c": "Component",
+      "sf42_quotefx__sf42_Type__c": "Accessory",
       "sf42_quotefx__sf42_Unitprice__c": 8984
     },
     {
@@ -77,7 +77,7 @@
       "sf42_quotefx__sf42_ProductID2__c": "@ProductRef6",
       "sf42_quotefx__sf42_Quantity__c": 1,
       "sf42_quotefx__sf42_Required__c": true,
-      "sf42_quotefx__sf42_Type__c": "Component"
+      "sf42_quotefx__sf42_Type__c": "Accessory"
     },
     {
       "attributes": {
@@ -94,7 +94,7 @@
       "sf42_quotefx__sf42_ProductID2__c": "@ProductRef5",
       "sf42_quotefx__sf42_Quantity__c": 1,
       "sf42_quotefx__sf42_Required__c": true,
-      "sf42_quotefx__sf42_Type__c": "Component"
+      "sf42_quotefx__sf42_Type__c": "Accessory"
     }
   ]
 }
