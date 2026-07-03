@@ -1,8 +1,0 @@
-{
-  "namespace": "sf42_quotefx",
-  "permissionSets": [
-    "sf42_quotefx__apoQuoteUser",
-    "sf42_quotefx__apoQuoteAdmin",
-    "sf42_quotefx__apperoQuoteLightning"
-  ]
-}

@@ -11,8 +11,6 @@
 
 System.debug('Appero Quote: reset import data started');
 
-Integer deleteFailures = 0;
-
 List<String> deleteSteps = new List<String>{
     'SELECT Id FROM sf42_quotefx__SF42_GenLineItem__c',
     'SELECT Id FROM sf42_quotefx__SF42_Discount_Matrix__c',
@@ -38,22 +36,7 @@ for (String soql : deleteSteps) {
         continue;
     }
 
-    for (Database.DeleteResult result : Database.delete(records, false)) {
-        if (!result.isSuccess()) {
-            deleteFailures++;
-            System.debug(
-                LoggingLevel.WARN,
-                'Delete failed: ' + result.getId() + ' - ' + result.getErrors()[0].getMessage()
-            );
-        }
-    }
+    Database.delete(records, false);
 }
 
-if (deleteFailures > 0) {
-    System.debug(
-        LoggingLevel.WARN,
-        'Appero Quote: reset import data completed with ' + deleteFailures + ' row delete failure(s)'
-    );
-} else {
-    System.debug('Appero Quote: reset import data completed');
-}
+System.debug('Appero Quote: reset import data completed');

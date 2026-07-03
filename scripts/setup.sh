@@ -61,33 +61,20 @@ sf package install \
   --no-prompt \
   --security-type AllUsers
 
-PERMSET_COUNT=0
-while IFS= read -r permset; do
-  PERMSET_COUNT=$((PERMSET_COUNT + 1))
-  echo "Assigning permission set ${permset} ..."
-  sf org assign permset \
-    --name "$permset" \
-    --target-org "$TARGET_ORG"
-done < <(grep -o '"sf42_quotefx__[^"]*"' "${REPO_ROOT}/config/permsets.json" | tr -d '"')
-
-if [[ "$PERMSET_COUNT" -eq 0 ]]; then
-  echo "No permission sets found in config/permsets.json."
-  exit 1
-fi
-
-echo "Deploying letterhead static resources ..."
-sf project deploy start \
-  --source-dir "${REPO_ROOT}/metadata/staticresources" \
+echo "Assigning permission sets ..."
+sf org assign permset \
+  --name sf42_quotefx__apoQuoteUser \
+  --target-org "$TARGET_ORG"
+sf org assign permset \
+  --name sf42_quotefx__apoQuoteAdmin \
+  --target-org "$TARGET_ORG"
+sf org assign permset \
+  --name sf42_quotefx__apperoQuoteLightning \
   --target-org "$TARGET_ORG"
 
-echo "Deploying Lightning record pages ..."
+echo "Deploying partner metadata (static resources, record pages, app assignments) ..."
 sf project deploy start \
-  --source-dir "${REPO_ROOT}/metadata/flexipages" \
-  --target-org "$TARGET_ORG"
-
-echo "Deploying app record page assignments ..."
-sf project deploy start \
-  --source-dir "${REPO_ROOT}/metadata/applications" \
+  --source-dir "${REPO_ROOT}/metadata" \
   --target-org "$TARGET_ORG"
 
 IMPORT_COUNT="$(grep -c '"sobject"' "${REPO_ROOT}/data/import-plan.json" || true)"

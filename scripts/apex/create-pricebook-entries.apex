@@ -5,7 +5,7 @@
 
 String customPricebookName = 'appero Pricebook';
 
-System.debug('Appero Quote: creating pricebook entries');
+System.debug('Appero Quote partner setup: pricebook entries started');
 
 Map<String, Decimal> productNameToUnitPrice = new Map<String, Decimal>{
     'appero quote Implementation \'Premium\'' => 9990,
@@ -69,4 +69,4 @@ if (!entries.isEmpty()) {
     insert entries;
 }
 
-System.debug('Appero Quote: created ' + entries.size() + ' pricebook entries');
+System.debug('Appero Quote partner setup: pricebook entries completed');

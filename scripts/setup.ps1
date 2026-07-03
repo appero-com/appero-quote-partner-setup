@@ -20,9 +20,8 @@ if (-not (Get-Command sf -ErrorAction SilentlyContinue)) {
 
 $RepoRoot = Split-Path $PSScriptRoot -Parent
 $PackageConfigPath = Join-Path $RepoRoot 'config\package-version.json'
-$PermsetConfigPath = Join-Path $RepoRoot 'config\permsets.json'
 $ImportPlanPath = Join-Path $RepoRoot 'data\import-plan.json'
-$StaticResourcesPath = Join-Path $RepoRoot 'metadata\staticresources'
+$MetadataPath = Join-Path $RepoRoot 'metadata'
 $CreatePricebookEntriesApexPath = Join-Path $RepoRoot 'scripts\apex\create-pricebook-entries.apex'
 
 $packageConfig = Get-Content $PackageConfigPath -Raw | ConvertFrom-Json
@@ -33,32 +32,22 @@ if ($packageId -match 'PLACEHOLDER|^04tX+$') {
     exit 1
 }
 
-$permsetConfig = Get-Content $PermsetConfigPath -Raw | ConvertFrom-Json
-
 Write-Host "Setting up Appero Quote demo for org $TargetOrg ..."
 
 Write-Host "Installing Appero Quote package $packageId ..."
 sf package install --package $packageId --target-org $TargetOrg --wait 30 --no-prompt --security-type AllUsers
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
-foreach ($permset in $permsetConfig.permissionSets) {
-    Write-Host "Assigning permission set $permset ..."
-    sf org assign permset --name $permset --target-org $TargetOrg
-    if ($LASTEXITCODE -ne 0) { exit 1 }
-}
-
-Write-Host 'Deploying letterhead static resources ...'
-sf project deploy start --source-dir $StaticResourcesPath --target-org $TargetOrg
+Write-Host 'Assigning permission sets ...'
+sf org assign permset --name sf42_quotefx__apoQuoteUser --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+sf org assign permset --name sf42_quotefx__apoQuoteAdmin --target-org $TargetOrg
+if ($LASTEXITCODE -ne 0) { exit 1 }
+sf org assign permset --name sf42_quotefx__apperoQuoteLightning --target-org $TargetOrg
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
-$FlexiPagesPath = Join-Path $RepoRoot 'metadata\flexipages'
-$ApplicationsPath = Join-Path $RepoRoot 'metadata\applications'
-Write-Host 'Deploying Lightning record pages ...'
-sf project deploy start --source-dir $FlexiPagesPath --target-org $TargetOrg
-if ($LASTEXITCODE -ne 0) { exit 1 }
-
-Write-Host 'Deploying app record page assignments ...'
-sf project deploy start --source-dir $ApplicationsPath --target-org $TargetOrg
+Write-Host 'Deploying partner metadata (static resources, record pages, app assignments) ...'
+sf project deploy start --source-dir $MetadataPath --target-org $TargetOrg
 if ($LASTEXITCODE -ne 0) { exit 1 }
 
 $importPlan = Get-Content $ImportPlanPath -Raw | ConvertFrom-Json
