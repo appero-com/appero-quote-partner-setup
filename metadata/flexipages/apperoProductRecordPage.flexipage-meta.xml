@@ -4,16 +4,36 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                                        <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Clone</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Share</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>PrintableView</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsConfiguration</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>enableActionsInNative</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideChatterActions</name>
@@ -39,6 +59,14 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>PricebookEntries</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
@@ -50,8 +78,296 @@
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedList_RelatedStandardPriceList_0</identifier>
+            </componentInstance>
+        </itemInstances>        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>sf42_quotefx__Product_Properties__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_CalcOrder__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_prop_Automated__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_PropertyType__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_calc_Operator__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_calc_Value__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_calc_ValueType__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_calc_isLowsell__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Product Properties</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>sf42_quotefx__SF42_CalcOrder__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList_sf42_quotefx__Product_Properties__r_0</identifier>
+            </componentInstance>
+        </itemInstances>        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>sf42_quotefx__Discount_Matrix__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_Account_Group__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_Account__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_DiscountType__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_Discount__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_isProductDiscount__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_isActive__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Discount Matrices</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>NAME</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList_sf42_quotefx__Discount_Matrix__r_0</identifier>
+            </componentInstance>
+        </itemInstances>        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>sf42_quotefx__Entries__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__sf42_Position__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__sf42_ProductID2__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_preselected__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Product Entries</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>sf42_quotefx__sf42_Position__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList_sf42_quotefx__Entries__r_0</identifier>
+            </componentInstance>
+        </itemInstances>        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>sf42_quotefx__Entries1__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__sf42_Position__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__sf42_ProductID1__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Product Entries</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>sf42_quotefx__sf42_Position__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList_sf42_quotefx__Entries1__r_0</identifier>
+            </componentInstance>
+        </itemInstances>        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>maxRecordsToDisplay</name>
+                    <value>10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>Product2.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>sf42_quotefx__Tax_Rules__r</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListDisplayType</name>
+                    <value>ADVGRID</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListFieldAliases</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>NAME</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_ProductGroup__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_TaxKey__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>sf42_quotefx__SF42_TaxRate__c</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListLabel</name>
+                    <value>Tax Rules</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showActionBar</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldAlias</name>
+                    <value>NAME</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>sortFieldOrder</name>
+                    <value>Ascending</value>
+                </componentInstanceProperties>
+                <componentName>lst:dynamicRelatedList</componentName>
+                <identifier>lst_dynamicRelatedList_sf42_quotefx__Tax_Rules__r_0</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
