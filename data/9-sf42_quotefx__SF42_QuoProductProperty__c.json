@@ -1,4 +1,4 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
@@ -192,7 +192,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef13"
+        "referenceId": "ProductPropertyRef9"
       },
       "Name": "appero quote > 20 Licenses, 36 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -217,7 +217,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef14"
+        "referenceId": "ProductPropertyRef10"
       },
       "Name": "appero quote > 50 Licenses, 36 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -242,7 +242,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef15"
+        "referenceId": "ProductPropertyRef11"
       },
       "Name": "appero quote > 50 Licenses, 24 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -267,7 +267,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef16"
+        "referenceId": "ProductPropertyRef12"
       },
       "Name": "appero quote up to 10 Licenses, 36 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -292,7 +292,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef17"
+        "referenceId": "ProductPropertyRef13"
       },
       "Name": "appero quote > 10 Licenses, 24 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -317,7 +317,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef18"
+        "referenceId": "ProductPropertyRef14"
       },
       "Name": "appero quote > 10 Licenses, 36 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -342,7 +342,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef19"
+        "referenceId": "ProductPropertyRef15"
       },
       "Name": "appero quote > 20 Licenses, 24 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -367,7 +367,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef20"
+        "referenceId": "ProductPropertyRef16"
       },
       "Name": "appero quote up to 10 Licenses, 24 Months",
       "RecordType": { "Name": "Bulk Price" },
@@ -392,7 +392,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef21"
+        "referenceId": "ProductPropertyRef17"
       },
       "Name": "End date",
       "RecordType": { "Name": "Product Property without Price Influence" },
@@ -414,7 +414,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_QuoProductProperty__c",
-        "referenceId": "ProductPropertyRef22"
+        "referenceId": "ProductPropertyRef18"
       },
       "Name": "End date",
       "RecordType": { "Name": "Product Property without Price Influence" },

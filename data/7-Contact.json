@@ -1,11 +1,11 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
         "type": "Contact",
-        "referenceId": "ContactRef4"
+        "referenceId": "ContactRef1"
       },
-      "AccountId": "@AccountRef7",
+      "AccountId": "@AccountRef1",
       "LastName": "Green",
       "FirstName": "Avi",
       "Salutation": "Mr.",
@@ -26,9 +26,9 @@
     {
       "attributes": {
         "type": "Contact",
-        "referenceId": "ContactRef11"
+        "referenceId": "ContactRef2"
       },
-      "AccountId": "@AccountRef7",
+      "AccountId": "@AccountRef1",
       "LastName": "Pavlova",
       "FirstName": "Stella",
       "Salutation": "Ms.",
@@ -50,9 +50,9 @@
     {
       "attributes": {
         "type": "Contact",
-        "referenceId": "ContactRef12"
+        "referenceId": "ContactRef3"
       },
-      "AccountId": "@AccountRef7",
+      "AccountId": "@AccountRef1",
       "LastName": "Boyle",
       "FirstName": "Lauren",
       "Salutation": "Ms.",
@@ -71,9 +71,9 @@
     {
       "attributes": {
         "type": "Contact",
-        "referenceId": "ContactRef16"
+        "referenceId": "ContactRef4"
       },
-      "AccountId": "@AccountRef7",
+      "AccountId": "@AccountRef1",
       "LastName": "Song",
       "FirstName": "Arthur",
       "Salutation": "Mr.",

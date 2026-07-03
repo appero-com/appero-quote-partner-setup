@@ -1,9 +1,9 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_Discount_Type__c",
-        "referenceId": "DiscountTypeRef2"
+        "referenceId": "DiscountTypeRef1"
       },
       "Name": "Loyalty Discount",
       "sf42_quotefx__SF42_relatedAccount__c": "Opportunity Account"

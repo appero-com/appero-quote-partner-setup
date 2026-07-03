@@ -1,11 +1,11 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
         "type": "Opportunity",
         "referenceId": "OpportunityRef1"
       },
-      "AccountId": "@AccountRef7",
+      "AccountId": "@AccountRef1",
       "IsPrivate": false,
       "Name": "John Doe Inc. | appero quote - CPQ Light",
       "StageName": "Qualification",
@@ -13,7 +13,7 @@
       "CloseDate": "2021-05-31",
       "ForecastCategoryName": "Pipeline",
       "Pricebook2Id": "@PriceBookRef1",
-      "sf42_quotefx__BillingContact__c": "@ContactRef16",
+      "sf42_quotefx__BillingContact__c": "@ContactRef4",
       "sf42_quotefx__SF42_Accepted_Quote__c": false,
       "sf42_quotefx__SF42_Quote_Count__c": 0,
       "sf42_quotefx__SF42_activeAccount__c": "1"

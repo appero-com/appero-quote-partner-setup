@@ -1,9 +1,9 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_Quote__c",
-        "referenceId": "QuoteRef2"
+        "referenceId": "QuoteRef1"
       },
       "Name": "appero quote EN",
       "sf42_quotefx__SF42_ApprovalLevel__c": 0,
@@ -47,7 +47,7 @@
     {
       "attributes": {
         "type": "sf42_quotefx__SF42_Quote__c",
-        "referenceId": "QuoteRef3"
+        "referenceId": "QuoteRef2"
       },
       "Name": "appero quote Order Confirmation EN",
       "sf42_quotefx__SF42_ApprovalLevel__c": 0,

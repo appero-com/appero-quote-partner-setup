@@ -1,9 +1,9 @@
-{
+﻿{
   "records": [
     {
       "attributes": {
         "type": "Account",
-        "referenceId": "AccountRef7"
+        "referenceId": "AccountRef1"
       },
       "Name": "John Doe Inc.",
       "sf42_quotefx__SF42_Account_Group__c": "@AccountGroupRef1",
