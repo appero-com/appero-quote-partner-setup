@@ -31,19 +31,19 @@ List<sf42_quotefx__SF42_QuoteStyle__c> styles = [
 List<StaticResource> firstPageResources = [
     SELECT Id, Body
     FROM StaticResource
-    WHERE Name = 'image'
+    WHERE Name = 'apperoLetterHeadCover'
     LIMIT 1
 ];
 List<StaticResource> secondPageResources = [
     SELECT Id, Body
     FROM StaticResource
-    WHERE Name = 'image_SecondPage'
+    WHERE Name = 'apperoBackground'
     LIMIT 1
 ];
 
 System.Assert.isFalse(
     firstPageResources.isEmpty() || secondPageResources.isEmpty(),
-    'Missing static resources image and/or image_SecondPage. Deploy metadata/staticresources first.'
+    'Missing static resources apperoLetterHeadCover and/or apperoBackground. Deploy metadata/staticresources first.'
 );
 
 List<Document> docs = new List<Document>{
