@@ -3,5 +3,6 @@
 .sfdx/
 
 # OS files
+.vscode/
 .DS_Store
 Thumbs.db
