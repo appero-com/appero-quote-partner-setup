@@ -508,16 +508,6 @@
                 <identifier>Recordsf42_quotefx_SF42_Account_Group_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_TaxKey__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_TaxKey_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-afd800bd-076e-4d2f-97c9-edc69e2b16a4</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -668,6 +658,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_Tax__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_Tax_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_Zahlungsbedingungen__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_Zahlungsbedingungen_cField</identifier>
             </fieldInstance>
@@ -678,8 +678,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_Tax__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_Tax_cField</identifier>
+                <fieldItem>Record.NumberOfEmployees</fieldItem>
+                <identifier>RecordNumberOfEmployeesField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-670bf33e-200b-4a2b-843a-0e92cc6a2545</name>
@@ -692,8 +692,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.AnnualRevenue</fieldItem>
-                <identifier>RecordAnnualRevenueField</identifier>
+                <fieldItem>Record.sf42_quotefx__SF42_TaxKey__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_TaxKey_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -702,8 +702,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.NumberOfEmployees</fieldItem>
-                <identifier>RecordNumberOfEmployeesField</identifier>
+                <fieldItem>Record.AnnualRevenue</fieldItem>
+                <identifier>RecordAnnualRevenueField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-657fa084-b604-45e8-9759-247606b8d421</name>
