@@ -2,11 +2,15 @@
 
 Use this repository to set up a Salesforce org with **Appero Quote** and ready-to-use demo data in a few steps. Authenticate your org with the Salesforce CLI, run one setup script, and open the Appero Quote apps.
 
+No terminal experience? Follow each step literally — including the copy-and-paste notes below.
+
 Replace **`MY-ALIAS`** everywhere below with a short name for your org (for example `appero-demo`). Use the same alias for login and for the setup script.
+
+**Before you start:** a dedicated demo org, the org username (see step 3), the Salesforce CLI installed (step 2), and about 20 minutes.
 
 ## 1. Get the repository
 
-Clone with Git **or** download and extract the ZIP — whichever you prefer.
+Clone with Git **or** download and unzip the ZIP — whichever you prefer.
 
 **Option A — Git clone**
 
@@ -18,8 +22,12 @@ cd appero-quote-partner-setup
 **Option B — Download ZIP**
 
 1. Download: [appero-quote-partner-setup (main branch ZIP)](https://github.com/appero-com/appero-quote-partner-setup/archive/refs/heads/main.zip)
-2. Extract the archive.
-3. Open a terminal in the extracted folder (`appero-quote-partner-setup-main`).
+2. **Unzip** the downloaded file. You should see a folder named `appero-quote-partner-setup-main`.
+3. **Open a terminal in that folder** — the command line where you will paste the setup commands:
+
+   - **Windows:** open the folder in File Explorer, click the address bar, type `powershell`, and press Enter. On Windows 11 you can also right-click the folder and choose **Open in Terminal**.
+   - **Mac:** right-click the folder, hover over **Quick Actions**, and choose **New Terminal at Folder**. Or open Terminal and type `cd `, then drag the folder onto the Terminal window and press Enter.
+   - **Linux:** open a terminal and run `cd` followed by the full path to the folder.
 
 ## 2. Prerequisites
 
@@ -27,11 +35,14 @@ cd appero-quote-partner-setup
 
 Install the [Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm) if you do not have it yet. This kit requires **Salesforce CLI v2** (`@salesforce/cli`); use the latest stable release if you can.
 
-Verify the installation:
+Verify the installation — copy the command below, paste it into your terminal, and press **Enter**:
 
 ```bash
 sf version
 ```
+
+- **Installed:** the terminal prints a line with version numbers (for example `@salesforce/cli/2.x`).
+- **Not installed:** you see `command not found` or similar — install the CLI using the link above, **close and reopen** your terminal, then run `sf version` again.
 
 ### Org and user
 
@@ -48,11 +59,13 @@ The user who runs setup needs **admin-level access** in that org — for example
 
 ## 3. Authorize your org
 
-Run this once per org. A browser window opens for Salesforce login.
+Run this once per org. Copy the command, paste it into your terminal, and press **Enter**. A browser window opens for Salesforce login.
 
 ```bash
 sf org login web --alias MY-ALIAS
 ```
+
+> **Use your org username, not necessarily your work email.** For Developer Edition, trial, or partner demo orgs, the login username is often different from your usual email address. Check the welcome or signup email for the exact Salesforce username (for example `name@example.com.partner`). After you log in successfully, you can close the browser and return to the terminal.
 
 ## 4. Run setup
 
