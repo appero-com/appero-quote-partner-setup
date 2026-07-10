@@ -235,19 +235,16 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>sf42_quotefx__sf42_Position__c</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>sf42_quotefx__sf42_ProductID2__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>sf42_quotefx__SF42_preselected__c</value>
+                            <value>sf42_quotefx__sf42_Type__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Product Entries</value>
+                    <value>Child Products</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -255,7 +252,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>
-                    <value>sf42_quotefx__sf42_Position__c</value>
+                    <value>NAME</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldOrder</name>
@@ -289,16 +286,16 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>sf42_quotefx__sf42_Position__c</value>
+                            <value>sf42_quotefx__sf42_ProductID1__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>sf42_quotefx__sf42_ProductID1__c</value>
+                            <value>sf42_quotefx__sf42_Type__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Product Entries</value>
+                    <value>Parent Products</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
@@ -306,7 +303,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldAlias</name>
-                    <value>sf42_quotefx__sf42_Position__c</value>
+                    <value>NAME</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>sortFieldOrder</name>
@@ -567,6 +564,16 @@
                 <identifier>Recordsf42_quotefx_SF42_CalculationInBundles_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_IgnoreQuoteEditor__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_IgnoreQuoteEditor_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-8fe519dd-e246-4b8e-b9ec-77db6780c248</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -627,6 +634,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_DiscountLimitForApproval__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_DiscountLimitForApproval_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_SkipDetailDialogOnAdd__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_SkipDetailDialogOnAdd_cField</identifier>
             </fieldInstance>
@@ -647,38 +664,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_IgnoreQuoteEditor__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_IgnoreQuoteEditor_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_HideFromProductSearch__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_HideFromProductSearch_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_LanguageLocale__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_LanguageLocale_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_DiscountLimitForApproval__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_DiscountLimitForApproval_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-b61d8c9f-d84e-4cf1-8398-177cb05b5fb3</name>
@@ -719,6 +706,10 @@
                 <identifier>RecordDescriptionField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-c4d0789e-43a8-41fa-bbdc-51599ae91a3f</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -739,27 +730,7 @@
                 <identifier>Recordsf42_quotefx_SF42_ProductImageUrl_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_xColumn1__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_xColumn1_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_xColumn2__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_xColumn2_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-c4d0789e-43a8-41fa-bbdc-51599ae91a3f</name>
+        <name>Facet-product-description-right</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -773,6 +744,16 @@
                 <identifier>flexipage_column5</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-product-description-right</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column5b</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-ce4922cc-1a85-41c9-8471-5813b1b30ca3</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -783,8 +764,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_Comment__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_Comment_cField</identifier>
+                <fieldItem>Record.sf42_quotefx__SF42_BadgeTextColor__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_BadgeTextColor_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9622a4eb-bbe1-4537-a83b-e7d2c5b2ff49</name>
@@ -807,8 +788,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_BadgeTextColor__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_BadgeTextColor_cField</identifier>
+                <fieldItem>Record.sf42_quotefx__SF42_Comment__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_Comment_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-513dc266-d84c-4255-90f2-4363959654b1</name>
@@ -855,20 +836,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_SynchronousApexHook__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_SynchronousApexHook_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-f6ec2f4f-e901-4324-b22c-15e035678836</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_fetchPriceOnInsertCallableClass__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_fetchPriceOnInsertCallableClass_cField</identifier>
             </fieldInstance>
@@ -881,6 +848,20 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_fetchPriceOnUpdateCallableClass__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_fetchPriceOnUpdateCallableClass_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f6ec2f4f-e901-4324-b22c-15e035678836</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_SynchronousApexHook__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_SynchronousApexHook_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
