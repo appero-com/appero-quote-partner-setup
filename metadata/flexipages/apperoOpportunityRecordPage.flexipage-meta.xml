@@ -168,26 +168,6 @@
                 <identifier>RecordTypeField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_Primary_Quote__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_Primary_Quote_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_LanguageLocale__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_LanguageLocale_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-0304949e-d1ea-491b-904f-8fd9c8189391</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -284,10 +264,30 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_Primary_Quote__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_Primary_Quote_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.sf42_quotefx__SF42_Tax_Quote__c</fieldItem>
                 <identifier>Recordsf42_quotefx_SF42_Tax_Quote_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.sf42_quotefx__SF42_QuotesValidUntil__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_QuotesValidUntil_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-cdf546a6-c9dd-4684-a7d3-7036006a1443</name>
@@ -300,18 +300,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_Tax_Opp__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_Tax_Opp_cField</identifier>
+                <fieldItem>Record.sf42_quotefx__SF42_LanguageLocale__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_LanguageLocale_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.sf42_quotefx__SF42_QuotesValidUntil__c</fieldItem>
-                <identifier>Recordsf42_quotefx_SF42_QuotesValidUntil_cField</identifier>
+                <fieldItem>Record.sf42_quotefx__SF42_Tax_Opp__c</fieldItem>
+                <identifier>Recordsf42_quotefx_SF42_Tax_Opp_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -349,38 +349,6 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-8678e22e-9e2e-4b3a-9f59-4543e079fca5</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>Facet-28b26357-1ea1-432b-99ee-cf08cf80c2cb</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>Facet-6c72d085-260b-4e37-b370-bf89852027c6</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-28b26357-1ea1-432b-99ee-cf08cf80c2cb</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-6c72d085-260b-4e37-b370-bf89852027c6</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-f780d704-5f25-495b-bdb0-35fc3f138191</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -586,28 +554,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>@@@SFDCOther_InformationSFDC@@@</value>
+                    <value>Quoting Information</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-f780d704-5f25-495b-bdb0-35fc3f138191</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>@@@SFDCAdditional_InformationSFDC@@@</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -640,7 +590,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Weitere Accounts</value>
+                    <value>Additional Accounts</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
